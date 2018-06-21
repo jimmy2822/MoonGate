@@ -43,10 +43,22 @@ class GatesController < ApplicationController
         end
     end
 
+    def destroy
+        @gate = Gate.find_by(id: params[:id])
+        @gate.destroy if @gate
+        redirect_to gates_path, notice: "刪除成功"
+    end
+
+    def like
+        @gate = Gate.find_by(id: params[:id])
+        @gate.like_logs.create(ip_address: request.remote_ip) if @gate
+        redirect_to gates_path, notice: "喜歡成功!"
+    end
+
     # 利用 Strong Parameters 設定過濾參數
     private
     def gate_params
-        params.require(:gate).permit(:name, :icon, :tag, :intro, :intro_detail, :is_public)
+        params.require(:gate).permit(:name, :icon, :tag, :intro, :intro_detail, :is_public, :like)
     end
 
 end

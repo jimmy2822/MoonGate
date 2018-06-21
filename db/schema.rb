@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_20_090305) do
+ActiveRecord::Schema.define(version: 2018_06_21_072927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2018_06_20_090305) do
     t.boolean "is_public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "server"
+    t.integer "like", default: 0
+  end
+
+  create_table "like_logs", force: :cascade do |t|
+    t.bigint "gate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ip_address"
+    t.string "who_liked"
+    t.index ["gate_id"], name: "index_like_logs_on_gate_id"
   end
 
 end
