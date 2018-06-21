@@ -1,0 +1,26 @@
+<h1>月門列表</h1>
+
+<%= link_to "新增月門", new_gate_path %>
+
+<table>
+    <thead>
+        <tr>
+            <td>名稱</td>
+            <td>圖示</td>
+            <td>標籤</td>
+            <td>簡介</td>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @gates.each do |gate| %>
+        <tr>
+            <td><%= link_to gate.name, gate_path(gate[:id])%></td>
+            <td><%= gate.icon %></td>
+            <td><%= gate.tag %></td>
+            <td><%= gate.intro %></td>
+            <td><%= link_to '編輯', edit_gate_path(gate) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
