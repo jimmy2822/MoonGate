@@ -10,6 +10,7 @@
             <td>標籤</td>
             <td>簡介</td>
             <td>喜愛數</td>
+            <td></td>
         </tr>
     </thead>
 
@@ -21,6 +22,7 @@
             <td><%= gate.tag %></td>
             <td><%= gate.intro %></td>
             <td><%= gate.like_logs.count %></td>
+            <td><%= link_to '加入伺服器', gate[:server], target: "_blank" %></td>
             <td><%= link_to '編輯', edit_gate_path(gate) %></td>
             <td><%= link_to '刪除', gate_path(gate) ,method:"delete", data: { confirm: "確認刪除" } %></td>
             <td><%= link_to '喜歡', like_gate_path(gate),method:"like" %></td>

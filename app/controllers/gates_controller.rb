@@ -58,7 +58,7 @@ class GatesController < ApplicationController
     # 利用 Strong Parameters 設定過濾參數
     private
     def gate_params
-        params.require(:gate).permit(:name, :icon, :tag, :intro, :intro_detail, :is_public, :like)
+        params.require(:gate).permit(:name, :icon, :tag, :intro, :intro_detail, :is_public, :like, :server)
     end
 
 end
