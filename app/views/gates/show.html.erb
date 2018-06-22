@@ -1,0 +1,21 @@
+<h1><%= @gate.name %></h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>圖示</td>
+            <td>標籤</td>
+            <td>詳細資訊</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><%= @gate.icon %></td>
+            <td><%= @gate.tag %></td>
+            <td><%= @gate.intro_detail %></td>
+        </tr>
+    </tbody>
+</table>
+
+<%= link_to '返回列表', gates_path %>
