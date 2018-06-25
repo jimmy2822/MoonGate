@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_25_022849) do
+ActiveRecord::Schema.define(version: 2018_06_25_082359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_06_25_022849) do
     t.datetime "updated_at", null: false
     t.string "server"
     t.integer "like", default: 0
+    t.integer "user_id"
   end
 
   create_table "like_logs", force: :cascade do |t|
