@@ -1,24 +1,10 @@
-<%= form_for(gate) do |f| %>
-    <%= f.label :name, "名稱" %>
-    <%= f.text_field :name %><br>
-
-    <%= f.label :icon, "圖示" %>
-    <%= f.text_field :icon %><br>
-
-    <%= f.label :server, "伺服器" %>
-    <%= f.text_field :server %><br>
-
-    <%= f.label :tag, "標籤" %>
-    <%= f.text_field :tag %><br>
-
-    <%= f.label :intro, "簡介" %>
-    <%= f.text_area :intro %><br>
-
-    <%= f.label :intro_detail, "詳細資訊" %>
-    <%= f.text_area :intro_detail %><br>
-
-    <%= f.label :is_public, "是否公開" %>
-    <%= f.check_box :is_public %><br>
-
+<%= simple_form_for(gate) do |f| %>
+    <%= f.input :name,label: "名稱" %>
+    <%= f.input :icon,label: "圖示" %>
+    <%= f.input :server,label: "伺服器" %>
+    <%= f.input :tag,label: "標籤" %>
+    <%= f.input :intro,label: "簡介" %>
+    <%= f.input :intro_detail,label: "詳細資訊" %>
+    <%= f.input :is_public,label: "是否公開?" %>
     <%= f.submit %>
 <% end %>
