@@ -1,5 +1,9 @@
-<h1>月門列表</h1>
-<span>使用者 <%= current_user[:email]%> 歡迎回來！</span>
+<div>
+    <h1>月門列表</h1>
+    <span style="float:right"> <%= user_name %> <%= sign_out %> 
+    </span>
+</div>
+
 <div><%= link_to "新增月門", new_gate_path %></div>
 
 <table class="table">
@@ -10,7 +14,7 @@
             <td>標籤</td>
             <td>簡介</td>
             <td>喜愛數</td>
-            <td></td>
+
         </tr>
     </thead>
 

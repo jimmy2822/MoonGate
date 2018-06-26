@@ -18,6 +18,7 @@ class GatesController < ApplicationController
     def create
         # 將已過濾的資料存進實體變數 @gate 當中
         @gate = Gate.new(gate_params)
+        @gate.user_id = current_user[:id]
 
         if @gate.save
             redirect_to gates_path, notice: "新增門成功"
@@ -49,12 +50,13 @@ class GatesController < ApplicationController
         redirect_to gates_path, notice: "喜歡成功!"
     end
 
-    # 利用 Strong Parameters 設定過濾參數
+    
     private
+    # 利用 Strong Parameters 設定過濾參數
     def gate_params
-        params.require(:gate).permit(:name, :icon, :tag, :intro, :intro_detail, :is_public, :like, :server).merge(user_id:current_user[:id])
+        params.require(:gate).permit(:name, :icon, :tag, :intro, :intro_detail, :is_public, :like, :server)
     end
-
+    # 每個 Action 撈出 route 對應資料庫 id 的參數
     def find_gate_id
           @gate = Gate.find_by(id: params[:id])
     end
