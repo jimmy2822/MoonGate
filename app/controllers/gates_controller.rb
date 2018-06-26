@@ -1,7 +1,9 @@
 class GatesController < ApplicationController
+    include GatesHelper
     attr_accessor :gates
     before_action :find_gate_id 
     before_action :authenticate_user! ,only: [:edit, :destory , :new, :create]
+
     # 將 Gate Model 資料傳進實體變數 @gates
     def index
         @gates = Gate.all
@@ -30,6 +32,7 @@ class GatesController < ApplicationController
 
     # 取出 Gate 資料中 id 是 params[:id] 的資料
     def edit
+        gate_owner?(@gate)
     end
 
     def update
@@ -60,5 +63,4 @@ class GatesController < ApplicationController
     def find_gate_id
           @gate = Gate.find_by(id: params[:id])
     end
-
 end
