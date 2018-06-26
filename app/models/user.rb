@@ -4,4 +4,9 @@ class User < ApplicationRecord
   # Devise setting
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  enum role: {
+    normal_user: 0,
+    admin: 99
+  }
 end
