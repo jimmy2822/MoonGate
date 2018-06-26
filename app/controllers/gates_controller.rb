@@ -15,8 +15,8 @@ class GatesController < ApplicationController
         @gate = Gate.new
     end
     
+    # 將已過濾的資料存進實體變數 @gate 當中
     def create
-        # 將已過濾的資料存進實體變數 @gate 當中
         @gate = Gate.new(gate_params)
         @gate.user_id = current_user[:id]
 
@@ -46,7 +46,7 @@ class GatesController < ApplicationController
     end
 
     def like
-        @gate.like_logs.create(ip_address: request.remote_ip) if @gate
+        @gate.like_logs.create(ip_address: request.remote_ip,who_liked: current_user[:id]) if @gate
         redirect_to gates_path, notice: "喜歡成功!"
     end
 

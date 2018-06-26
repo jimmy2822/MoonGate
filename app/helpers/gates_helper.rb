@@ -7,12 +7,20 @@ module GatesHelper
             link_to "Sign in", user_session_path, method: "get"
         end
     end
-    
+
     # 顯示使用者歡迎信息
     def user_name
         if user_signed_in?
             "歡迎回來!【 " + current_user[:email] +" 】"
         else
+        end
+    end
+
+    def like_gate_button(gate)
+        if user_signed_in?
+            link_to '喜歡', like_gate_path(gate),method:"like"
+        else
+            link_to '喜歡', user_session_path,method: "get"
         end
     end
 end
