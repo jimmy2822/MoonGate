@@ -45,6 +45,9 @@ gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 
+# using tagging plug-in
+gem 'acts-as-taggable-on', '~> 6.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
