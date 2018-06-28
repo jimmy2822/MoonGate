@@ -1,10 +1,11 @@
 class GatesController < ApplicationController
-    before_action :find_gate_id, except: [:index, :show, :new, :create]
+    before_action :find_gate_id, except: [:index, :show, :new, :create, :search_tag ]
     before_action :authenticate_user! ,only: [:edit, :destory , :new, :create]
 
     # 將 Gate Model 資料傳進實體變數 @gates
     def index
-        @gates = Gate.includes(:user, :like_logs, :taggings, :tags)
+		@gates = Gate.includes(:user, :like_logs, :taggings, :tags)
+		@tags = ActsAsTaggableOn::Tag.most_used(15)
     end
 
     def show  
@@ -48,12 +49,17 @@ class GatesController < ApplicationController
         @gate.destroy
         redirect_to gates_path 
         # redirect_to gates_path, notice: "刪除成功"
-    end
+	end
+	
+	def search_tag
+		@gates = Gate.tagged_with(params[:search_word])
+	end
 
     private
     # 利用 Strong Parameters 設定過濾參數
     def gate_params
-        params.require(:gate).permit(:name, :icon, :intro, :intro_detail, :is_public, :like, :server, :tag_list, :user_id)
+		params.require(:gate).permit(:name, :icon, :intro, :intro_detail, :is_public, :like, :server, :tag_list, :user_id, :search_word)
+		params.require(:tag).permit(:name)
     end
     # 每個 Action 撈出 route 對應資料庫 id 的參數
     def find_gate_id

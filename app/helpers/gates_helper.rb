@@ -43,4 +43,8 @@ module GatesHelper
             false
         end
     end
+
+    def search_tag_button(tag_list)
+        tag_list.each {|tag| link_to tag, search_tag_gates_path(search_word: tag.to_s) , method:"get" } 
+    end
 end
