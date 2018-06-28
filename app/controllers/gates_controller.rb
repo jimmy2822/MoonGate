@@ -1,7 +1,7 @@
 class GatesController < ApplicationController
+	before_action :authenticate_user! ,only: [:edit, :destory , :new, :create]
     before_action :find_gate_id, except: [:index, :show, :new, :create, :search_tag ]
-    before_action :authenticate_user! ,only: [:edit, :destory , :new, :create]
-
+    
     # 將 Gate Model 資料傳進實體變數 @gates
     def index
 		@gates = Gate.includes(:user, :like_logs, :taggings, :tags)
@@ -32,7 +32,6 @@ class GatesController < ApplicationController
 
     # 取出 Gate 資料中 id 是 params[:id] 的資料
     def edit
-			
     end
 	
 	def update
@@ -59,15 +58,14 @@ class GatesController < ApplicationController
     # 利用 Strong Parameters 設定過濾參數
     def gate_params
 		params.require(:gate).permit(:name, :icon, :intro, :intro_detail, :is_public, :like, :server, :tag_list, :user_id, :search_word)
-		params.require(:tag).permit(:name)
     end
     # 每個 Action 撈出 route 對應資料庫 id 的參數
     def find_gate_id
         @gate = scoped.find(params[:id])
     end
 
-    def scoped
-        return Gate if current_user.admin? && ['update', 'edit', 'destroy'].include?(params[:action])
-        current_user.gates
+	def scoped
+		return Gate if current_user.admin? && ['update', 'edit', 'destroy'].include?(params[:action])
+		current_user.gates
     end
 end

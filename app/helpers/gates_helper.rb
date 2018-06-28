@@ -4,7 +4,7 @@ module GatesHelper
         if user_signed_in?
             link_to "Sign out", destroy_user_session_path, method: "delete"
         else
-            link_to "Sign in", user_session_path, method: "get"
+            link_to "Sign in", user_session_path
         end
     end
 
@@ -29,7 +29,7 @@ module GatesHelper
                 link_to '喜歡', gate_like_path(gate), method: :post
             end
         else
-            link_to '喜歡', user_session_path, method: "get"
+            link_to '喜歡', user_session_path
         end
     end
 
@@ -45,6 +45,16 @@ module GatesHelper
     end
 
     def search_tag_button(tag_list)
-        tag_list.each {|tag| link_to tag, search_tag_gates_path(search_word: tag.to_s) , method:"get" } 
+        @a = 1
+        tag_list.each do |tag|
+            if @a < (tag_list.length)
+                concat link_to(tag, search_tag_gates_path(search_word: tag.to_s)) +", "
+                @a += 1
+            else
+                concat link_to(tag, search_tag_gates_path(search_word: tag.to_s))
+            end
+        end
     end
+    
+      
 end

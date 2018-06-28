@@ -23,7 +23,7 @@
         <tr>
             <td><%= link_to gate.name, gate_path(gate[:id]) %></td>
             <td><%= gate.icon %></td>
-            <td><%= search_tag_button(gate.tag_list) %></td>
+            <td><% search_tag_button(gate.tag_list) %></td>
             <td><%= gate.intro %></td>
             <td><%= gate.like_logs.count %></td>
             <td><%= link_to '加入伺服器', gate[:server], target: "_blank" %></td>
