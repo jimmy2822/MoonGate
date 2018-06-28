@@ -23,10 +23,11 @@
         <tr>
             <td><%= link_to gate.name, gate_path(gate[:id])%></td>
             <td><%= gate.icon %></td>
-            <td><%= gate.tag %></td>
+            <td><%= gate.tag_list %></td>
             <td><%= gate.intro %></td>
             <td><%= gate.like_logs.count %></td>
             <td><%= link_to '加入伺服器', gate[:server], target: "_blank" %></td>
+            <td><%= link_to 'EDIT', edit_gate_path(gate), method: "get" %></td>
             <td><%= link_to '刪除', gate_path(gate), method: "delete" %></td>
             <td><%= like_gate_button(gate) %></td>
         </tr>

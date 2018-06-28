@@ -2,7 +2,7 @@
     <%= f.input :name,label: "名稱" %>
     <%= f.input :icon,label: "圖示" %>
     <%= f.input :server,label: "伺服器" %>
-    <%= f.input :tag,label: "標籤" %>
+    <%= f.input :tag_list,label: "標籤", input_html: {value: gate.tag_list.to_s}%> 
     <%= f.input :intro,label: "簡介" %>
     <%= f.input :intro_detail,label: "詳細資訊" %>
     <%= f.input :is_public,label: "是否公開?" %>
