@@ -24,11 +24,12 @@ module GatesHelper
 
             if gate.like_logs.by(current_user).exists?
                 link_to '已喜歡', gate_like_path(gate), method: :delete
+                
             else
                 link_to '喜歡', gate_like_path(gate), method: :post
             end
         else
-            #link_to '喜歡', user_session_path, method: "get"
+            link_to '喜歡', user_session_path, method: "get"
         end
     end
 
