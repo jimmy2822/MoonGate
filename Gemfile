@@ -36,6 +36,15 @@ gem 'jbuilder', '~> 2.5'
 # using Datebase postgresql
 gem 'pg'
 
+gem 'devise'
+
+# using simple form
+gem 'simple_form'
+
+# using bootstrap
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
