@@ -1,10 +1,23 @@
-<div>
-    <h1>月門列表</h1>
-    <span style="float:right"> <%= user_name %> <%= sign_out %> 
-    </span>
-</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand">MOON GATE</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><%= sign_out %></li>
+            <li><%= link_to '會員註冊', new_user_session_path %></li>
+        </ul>
+    </div>
+</nav>
 
-<div><%= link_to "新增月門", new_gate_path %></div>
+<div><%= render 'search_bar' %></div>
+
+
+
+
+
+
+
 
 <table class="table">
     <thead>
@@ -14,7 +27,6 @@
             <td>標籤</td>
             <td>簡介</td>
             <td>喜愛數</td>
-
         </tr>
     </thead>
 

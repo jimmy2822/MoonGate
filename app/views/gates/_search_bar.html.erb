@@ -1,0 +1,6 @@
+<%= form_tag(search_tag_gates_path, :method => "get") do %>
+  <%= label_tag(:search_word, "搜尋標籤：") %>
+  <%= text_field_tag(:search_word) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
