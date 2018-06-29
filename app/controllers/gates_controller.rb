@@ -44,7 +44,7 @@ class GatesController < ApplicationController
 		end
     end
 
-    def destroy
+	def destroy
         @gate.destroy
         redirect_to gates_path 
         # redirect_to gates_path, notice: "刪除成功"
@@ -63,7 +63,8 @@ class GatesController < ApplicationController
     def find_gate_id
         @gate = scoped.find(params[:id])
     end
-
+	
+	
 	def scoped
 		return Gate if current_user.admin? && ['update', 'edit', 'destroy'].include?(params[:action])
 		current_user.gates
