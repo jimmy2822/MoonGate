@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MoonGate</title>
+    <title>MoonGate月門</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,6 +11,7 @@
   <body>
     <div class="container">
         <span style="float:right; font-size:18; color:red;"><%= flash[:notice] %></span>
+        <%= render 'gates/header' %>
         <%= yield %>
     </div>
   </body>
