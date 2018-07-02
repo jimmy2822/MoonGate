@@ -11,7 +11,8 @@ module GatesHelper
     # 顯示使用者歡迎信息
     def user_name
         if user_signed_in?
-            "歡迎回來!【 " + current_user[:email] +" 】"
+            @name = current_user[:email].split("@")
+            "歡迎回來！ 【 #{@name[0]} 】 "
         else
         end
     end

@@ -1,3 +1,11 @@
+<div class="">
+    <ul>熱門標籤：
+    <% @tags.each do |tag|%>
+        <li style= "display:inline;"><%= link_to tag, search_tag_gates_path(search_word: tag.to_s) , method:"get" %></li>
+    <% end %>
+    </ul>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -26,10 +34,6 @@
     </tbody>
 </table>
 
-<ul>
-    <% @tags.each do |tag|%>
-        <li style= "display:inline;"><%= link_to tag, search_tag_gates_path(search_word: tag.to_s) , method:"get" %></li>
-    <% end %>
-</ul>
+
 
 
