@@ -4,7 +4,8 @@ class GatesController < ApplicationController
     
     # 將 Gate Model 資料傳進實體變數 @gates
     def index
-		@gates = Gate.includes(:user, :like_logs, :taggings, :tags)
+        @gates = Gate.includes(:user, :like_logs, :taggings, :tags)
+        @gates = Gate.left_joins(:like_logs).group(:id).order('COUNT(like_logs.id)DESC')
 		@tags = ActsAsTaggableOn::Tag.most_used(15)
     end
 

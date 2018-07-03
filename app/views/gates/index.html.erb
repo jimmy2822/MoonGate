@@ -1,7 +1,9 @@
-<div class="">
+<div class="hot-tags">
     <ul>熱門標籤：
     <% @tags.each do |tag|%>
-        <li style= "display:inline;"><%= link_to tag, search_tag_gates_path(search_word: tag.to_s) , method:"get" %></li>
+        <li style= "display:inline; ">
+            { <%= link_to tag, search_tag_gates_path(search_word: tag.to_s)%> }
+        </li>
     <% end %>
     </ul>
 </div>

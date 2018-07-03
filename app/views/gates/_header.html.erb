@@ -1,12 +1,12 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <%= link_to 'MOONGATE 月門', root_path, class:"navbar-brand" %>
+            <%= link_to 'MOON GATE 月門', root_path, class:"navbar-brand" %>
             <span><%= render 'gates/search_bar' %></span>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><%= sign_out%></li>
-            <li><%= link_to '會員註冊', new_user_registration_path, class:"btn"%></li>
+            <li><%= sign_button %></li>
+            <li><%= register_button %></li>
         </ul>
     </div>
 </nav>

@@ -1,6 +1,6 @@
 module GatesHelper
     # 如果使用者為登入狀態，就顯示登出按鈕，否則顯示登入按鈕
-    def sign_out
+    def sign_button
         if user_signed_in?
             link_to "會員登出", destroy_user_session_path, method: "delete"
         else
@@ -57,5 +57,7 @@ module GatesHelper
         end
     end
     
-      
+    def register_button
+        link_to '會員註冊', new_user_registration_path, class:"btn" unless user_signed_in?
+    end
 end
