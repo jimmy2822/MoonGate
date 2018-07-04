@@ -49,8 +49,9 @@ gem 'jquery-rails'
 gem 'acts-as-taggable-on', '~> 6.0'
 
 # for uploading and resize images
-gem 'cloudinary'
 gem 'carrierwave'
+gem 'cloudinary'
+
 
 
 # Reduces boot times through caching; required in config/boot.rb

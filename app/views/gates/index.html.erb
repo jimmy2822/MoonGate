@@ -23,7 +23,7 @@
     <% @gates.each do |gate| %>
         <tr>
             <td><%= link_to gate.name, gate_path(gate[:id]) %></td>
-            <td><%= gate.icon %></td>
+            <td><%= cl_image_tag(gate.icon, width:80, height:80, radius:"max" ) %></td>
             <td><% search_tag_button(gate.tag_list) %></td>
             <td><%= gate.intro %></td>
             <td><%= gate.like_logs.count %></td>
@@ -35,7 +35,3 @@
     <% end %>
     </tbody>
 </table>
-
-
-
-
