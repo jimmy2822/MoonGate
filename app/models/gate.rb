@@ -15,7 +15,7 @@ class Gate < ApplicationRecord
 
     private
     def image_size_validation
-        errors[:icon] << "檔案大小應該小於 500 kb !" if icon.size > 0.5.megabytes
+        errors[:icon] << "檔案必須小於於 1 MB !" if icon.size >= 1.megabytes
     end
 
 end

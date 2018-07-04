@@ -1,10 +1,10 @@
 <%= simple_form_for(gate) do |f| %>
     <%= f.input :name,label: "名稱" %>
-    <%= f.input :icon,label: "圖示", folder:"MoonGate/pictures" %>
-    <%= f.input :server,label: "伺服器" %>
-    <%= f.input :tag_list,label: "標籤", input_html: {value: gate.tag_list.to_s}%> 
-    <%= f.input :intro,label: "簡介" %>
-    <%= f.input :intro_detail,label: "詳細資訊" %>
-    <%= f.input :is_public,label: "是否公開?" %>
+    <%= f.input :icon,label: "圖示", folder: "MoonGate/pictures", hint:"限制檔案大小為 1 MB 內,檔案類型為 JPG、JPEG、PNG" %>
+    <%= f.input :server,label: "伺服器邀請碼", hint:"請於 Discord 頻道建立即時邀請並設定該連接永不過期" %>
+    <%= f.input :tag_list,label: "標籤", input_html: {value: gate.tag_list.to_s}, hint:"每個標籤請用逗號','隔開，例如：絕地求生,英雄連盟,鬥陣特攻" %> 
+    <%= f.input :intro,label: "簡介",hint:"將於月門列表中顯示簡介,限制 150 字以內"%>
+    <%= f.input :intro_detail,label: "詳細資訊" ,hint: "顯示於月門檢視頁面"%>
+    <%= f.input :is_public,label: "是否公開?",hint: "  勾選公開後將於月門列表顯示" %>
     <%= f.submit %>
 <% end %>
