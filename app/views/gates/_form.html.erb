@@ -1,4 +1,5 @@
-<%= simple_form_for(gate) do |f| %>
+<div class="container-fluid col-lg-8">
+    <%= simple_form_for(gate) do |f| %>
     <%= f.input :name,label: "名稱" %>
     <%= f.input :icon,label: "圖示", folder: "MoonGate/pictures", hint:"限制檔案大小為 1 MB 內,檔案類型為 JPG、JPEG、PNG" %>
     <%= f.input :server,label: "伺服器邀請碼", hint:"請於 Discord 頻道建立即時邀請並設定該連接永不過期" %>
@@ -7,4 +8,5 @@
     <%= f.input :intro_detail,label: "詳細資訊" ,hint: "顯示於月門檢視頁面"%>
     <%= f.input :is_public,label: "是否公開?",hint: "  勾選公開後將於月門列表顯示" %>
     <%= f.submit %>
-<% end %>
+    <% end %>   
+</div>

@@ -1,6 +1,6 @@
 class GatesController < ApplicationController
 	before_action :authenticate_user! ,only: [:edit, :destory , :new, :create]
-    before_action :find_gate_id, except: [:index, :show, :new, :create, :search_tag ]
+    before_action :find_gate_id, except: [:index, :show, :new, :create, :search_tag, :manage ]
     
     # 將 Gate Model 資料傳進實體變數 @gates
     def index
@@ -53,7 +53,11 @@ class GatesController < ApplicationController
 	
 	def search_tag
 		@gates = Gate.tagged_with(params[:search_word])
-	end
+    end
+    
+    def manage
+        
+    end
 
     private
     # 利用 Strong Parameters 設定過濾參數
