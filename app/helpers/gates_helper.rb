@@ -49,10 +49,10 @@ module GatesHelper
         @a = 1
         tag_list.each do |tag|
             if @a < (tag_list.length)
-                concat link_to(tag, search_tag_gates_path(search_word: tag.to_s)) +", "
+                concat link_to(tag, search_tag_gates_path(search_word: tag.to_s), class:"btn btn-primary") + " "
                 @a += 1
             else
-                concat link_to(tag, search_tag_gates_path(search_word: tag.to_s))
+                concat link_to(tag, search_tag_gates_path(search_word: tag.to_s), class:"btn btn-primary")
             end
         end
     end

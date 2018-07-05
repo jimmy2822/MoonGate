@@ -1,11 +1,45 @@
 // Place all the styles related to the Gates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.search-form{
+$gate_box_height: 250px;
+$gate_box_widh: 350px;
+$gate-box-color: rgb(255, 255, 255);
+$gate-header-color: rgba(223, 223, 223, 0.795);
+.search-form {
     padding-top: 0.8em;
     display: inline-block;
 }
 
-.sign-info{
+.sign-info {
     text-align: right;
+}
+
+.gate-box {
+    box-sizing: border-box;
+    height: $gate_box_height;
+    width: $gate_box_widh;
+    margin: 15px 15px 15px 0;
+    padding: 0px 0px 15px 0px;
+    background-color: $gate-box-color;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+
+.gate-box-header {
+    height: 60px;
+    background-color: $gate-header-color;
+}
+
+.gate-box-icon {
+    padding: 5px;
+}
+
+.gate-box-name {
+    font-size: 1.2em;
+    padding-left: $gate_box_widh*0.02;
+}
+
+.gate-box-body {
+    height: $gate_box_height;
+    text-align: center;
+    display: inline-block;
 }

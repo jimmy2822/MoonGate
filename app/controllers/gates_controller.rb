@@ -1,5 +1,5 @@
 class GatesController < ApplicationController
-	before_action :authenticate_user! ,only: [:edit, :destory , :new, :create]
+	before_action :authenticate_user! ,only: [:edit, :destory , :new, :create, :manage]
     before_action :find_gate_id, except: [:index, :show, :new, :create, :search_tag, :manage ]
     
     # 將 Gate Model 資料傳進實體變數 @gates
@@ -56,7 +56,7 @@ class GatesController < ApplicationController
     end
     
     def manage
-        
+        @gates = User.find(current_user[:id]).gates
     end
 
     private

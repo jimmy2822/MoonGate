@@ -1,0 +1,21 @@
+<div class="container-fluid col-lg-8">
+    <% @gates.each do |gate| %>
+    <div class="col-lg-6 gate-box">
+        <div class="gate-box-header">
+            <div class="gate-box-icon">
+                <%= cl_image_tag(gate.icon, width:50, height:50, radius:"max" ) %>
+                <%= link_to gate.name, gate_path(gate[:id]), class:"gate-box-name" %>
+            </div>
+            
+        </div>
+        <div class="gate-box-body">
+            <% search_tag_button(gate.tag_list) %>
+            <%= gate.intro %>
+            <%= gate.like_logs.count %>
+            <%= link_to '加入伺服器', gate[:server], target: "_blank" %>
+            <%= link_to '編輯月門', edit_gate_path(gate) %>
+            <%= like_gate_button(gate) %>
+        </div>
+    </div>
+    <% end %>
+</div>
