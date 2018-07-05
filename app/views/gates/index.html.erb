@@ -2,7 +2,7 @@
     <ul>熱門標籤：
     <% @tags.each do |tag|%>
         <li style= "display:inline; ">
-            <%= link_to tag, search_tag_gates_path(search_word: tag.to_s), class:"btn btn-primary" %>
+            <%= link_to tag, search_tag_gates_path(search_word: tag.to_s), class:"btn-tag" %>
         </li>
     <% end %>
     </ul>

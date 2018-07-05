@@ -1,4 +1,4 @@
-<div class="container-fluid col-lg-8">
+<div>
     <%= simple_form_for(gate) do |f| %>
     <%= f.input :name,label: "名稱" %>
     <%= f.input :icon,label: "圖示", folder: "MoonGate/pictures", hint:"限制檔案大小為 1 MB 內,檔案類型為 JPG、JPEG、PNG" %>
@@ -9,7 +9,7 @@
     <%= f.input :is_public,label: "是否公開?",hint: "  勾選公開後將於月門列表顯示" %>
     <%= f.submit%>
     <% end %>  
-    <%= link_to '刪除', gate_path(gate), method: "delete", class:"btn btn-danger" %>
 </div>
+
 
 

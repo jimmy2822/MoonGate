@@ -1,20 +1,23 @@
+<div><%= link_to '新增月門', new_gate_path, class:"btn btn-primary" %></div>
+<button style="font-size:24px">Button <i class="fa fa-heart"></i></button>
 <div class="container-fluid col-lg-8">
     <% @gates.each do |gate| %>
     <div class="col-lg-6 gate-box">
         <div class="gate-box-header">
             <div class="gate-box-icon">
-                <%= cl_image_tag(gate.icon, width:50, height:50, radius:"max" ) %>
-                <%= link_to gate.name, gate_path(gate[:id]), class:"gate-box-name" %>
+            <%= cl_image_tag(gate.icon, width:50, height:50, radius:"max" ) %>
+            <%= link_to gate.name, gate_path(gate[:id]), class:"gate-box-name" %>
             </div>
-            
-        </div>
-        <div class="gate-box-body">
-            <% search_tag_button(gate.tag_list) %>
-            <%= gate.intro %>
-            <%= gate.like_logs.count %>
-            <%= link_to '加入伺服器', gate[:server], target: "_blank" %>
-            <%= link_to '編輯月門', edit_gate_path(gate) %>
-            <%= like_gate_button(gate) %>
+
+            <div class="gate-box-body">
+                    <span ><%= link_to '加入伺服器', gate[:server], target: "_blank", class:"btn-tag" %></span>
+                    <span ><%= link_to '編輯月門', edit_gate_path(gate) , class:"btn-tag" %></span>
+                    <span><%= gate.intro %></span>
+                    <div class="gate-box-tool">    
+                        <span class="gate-tag">相關標籤：<% search_tag_button(gate.tag_list) %></span>
+                        <span class="gate-like"><%= gate.like_logs.count %> <%= like_gate_button(gate) %></span>
+                    </div>
+            </div>
         </div>
     </div>
     <% end %>

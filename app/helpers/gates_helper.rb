@@ -20,14 +20,10 @@ module GatesHelper
     # 
     def like_gate_button(gate)
         if user_signed_in?
-            # gate.likes.where(user: current_user).exists?
-            # gate.likes.by(current_user).exists?
-
             if gate.like_logs.by(current_user).exists?
-                link_to '已喜歡', gate_like_path(gate), method: :delete
-                
+                link_to '', gate_like_path(gate), method: :delete, class:"glyphicon glyphicon-star"
             else
-                link_to '喜歡', gate_like_path(gate), method: :post
+                link_to '', gate_like_path(gate), method: :post, class:"glyphicon glyphicon-star-empty"
             end
         else
             link_to '喜歡', user_session_path
@@ -49,10 +45,10 @@ module GatesHelper
         @a = 1
         tag_list.each do |tag|
             if @a < (tag_list.length)
-                concat link_to(tag, search_tag_gates_path(search_word: tag.to_s), class:"btn btn-primary") + " "
+                concat link_to(tag, search_tag_gates_path(search_word: tag.to_s), class:"btn-tag") + " "
                 @a += 1
             else
-                concat link_to(tag, search_tag_gates_path(search_word: tag.to_s), class:"btn btn-primary")
+                concat link_to(tag, search_tag_gates_path(search_word: tag.to_s), class:"btn-tag ")
             end
         end
     end

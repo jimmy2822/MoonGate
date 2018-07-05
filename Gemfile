@@ -44,6 +44,7 @@ gem 'simple_form'
 # using bootstrap
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+gem "font-awesome-rails"
 
 # using tagging plug-in
 gem 'acts-as-taggable-on', '~> 6.0'

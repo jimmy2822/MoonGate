@@ -1,4 +1,5 @@
+<div><%= link_to '返回管理月門', manage_gates_path, class:"btn btn-primary" %></div>
 <h1>新增月門</h1>
+<div><%= render 'gates/new_form', gate: @gate %></div>
 
-<%= render 'form', gate: @gate %>
-<%= link_to '返回列表', gates_path %>
+

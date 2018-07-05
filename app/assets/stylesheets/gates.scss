@@ -1,10 +1,24 @@
 // Place all the styles related to the Gates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$primary-color: #FF4003;
+$primary-color-dark: rgb(209, 52, 0);
+$secondary-color: #97c600;
+$secondary-color-dark: #89b300;
+$bg-color: #383331;
 $gate_box_height: 250px;
 $gate_box_widh: 350px;
 $gate-box-color: rgb(255, 255, 255);
-$gate-header-color: rgba(223, 223, 223, 0.795);
+$gate-header-height: 60px;
+$gate-body-height: 160px;
+a {
+    color: $primary-color;
+}
+
+a:hover {
+    color: $primary-color-dark;
+}
+
 .search-form {
     padding-top: 0.8em;
     display: inline-block;
@@ -21,12 +35,12 @@ $gate-header-color: rgba(223, 223, 223, 0.795);
     margin: 15px 15px 15px 0;
     padding: 0px 0px 15px 0px;
     background-color: $gate-box-color;
-    box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 2px 2px 2px 2px gray;
 }
 
 .gate-box-header {
-    height: 60px;
-    background-color: $gate-header-color;
+    height: $gate-header-height;
+    background-color: $bg-color;
 }
 
 .gate-box-icon {
@@ -36,10 +50,61 @@ $gate-header-color: rgba(223, 223, 223, 0.795);
 .gate-box-name {
     font-size: 1.2em;
     padding-left: $gate_box_widh*0.02;
+    display: inline;
 }
 
 .gate-box-body {
-    height: $gate_box_height;
+    height: $gate_body_height;
+    width: $gate_box_widh;
     text-align: center;
     display: inline-block;
+}
+
+.gate-box-tool {
+    height: 30px;
+    width: $gate_box_widh;
+    margin-top: 140px;
+    display: inline-block;
+    padding-left: 15px;
+    text-align: left;
+}
+
+.gate-tag {}
+
+.gate-like {
+    float: right;
+    padding-right: 10px;
+    font-size: 1.2em;
+}
+
+.btn-tag {
+    color: #fff;
+    background-color: $secondary-color;
+    border-color: $secondary-color-dark;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn-tag.focus {
+    color: #fff;
+    background-color: #1ca700;
+    border-color: #1ca700;
+}
+
+.btn-tag:hover {
+    color: #fff;
+    background-color: #1ca700;
+    border-color: #1ca700;
+    text-decoration: none;
 }
