@@ -21,14 +21,15 @@ module GatesHelper
     def like_gate_button(gate)
         if user_signed_in?
             if gate.like_logs.by(current_user).exists?
-                link_to '', gate_like_path(gate), method: :delete, class:"glyphicon glyphicon-star"
+                button_to content_tag(:i, gate.like_logs.count, class:"fa fa-heart"), gate_like_path(gate), method: :delete, class:"btn-tag"
             else
-                link_to '', gate_like_path(gate), method: :post, class:"glyphicon glyphicon-star-empty"
+                button_to content_tag(:i, gate.like_logs.count, class:"fa fa-heart-o"), gate_like_path(gate), method: :post, class:"btn-tag"
             end
         else
             link_to '喜歡', user_session_path
         end
     end
+
 
     # 檢查是否為 gate 擁有者 id 與登入者 id 是否相同
     def gate_owner?(gate)
