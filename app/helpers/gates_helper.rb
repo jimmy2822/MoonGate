@@ -21,9 +21,9 @@ module GatesHelper
     def like_gate_button(gate)
         if user_signed_in?
             if gate.like_logs.by(current_user).exists?
-                button_to content_tag(:i, gate.like_logs.count, class:"fa fa-heart"), gate_like_path(gate), method: :delete, class:"btn-tag"
+                link_to content_tag(:i, gate.like_logs.count, class:"fa fa-heart").html_safe, gate_like_path(gate), method: :delete, class:"btn-tag-like"
             else
-                button_to content_tag(:i, gate.like_logs.count, class:"fa fa-heart-o"), gate_like_path(gate), method: :post, class:"btn-tag"
+                link_to content_tag(:i, gate.like_logs.count, class:"fa fa-heart-o").html_safe, gate_like_path(gate), method: :post, class:"btn-tag-like"
             end
         else
             link_to '喜歡', user_session_path
