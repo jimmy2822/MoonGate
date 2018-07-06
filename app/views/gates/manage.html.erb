@@ -4,19 +4,26 @@
     <% @gates.each do |gate| %>
     <div class="col-lg-8 gate-box container">
         <div class="gate-box-header">
-            <div class="gate-box-icon col-lg-3 "><%= cl_image_tag(gate.icon, width:50, height:50, radius:"max" ) %></div>
-            <div class="gate-box-name col-lg-9 "><%= link_to gate.name, gate_path(gate[:id]) %></div>
+            <div class="col-lg-2 gate-box-icon">
+                <%= cl_image_tag(gate.icon, width:50, height:50, radius:"max" ) %>
+            </div>
+            <div class="col-lg-10 gate-box-name">
+                <%= link_to gate.name, gate_path(gate[:id]) %>
+            </div>
         </div>
 
         <div class="gate-box-body">
-            <span ><%= link_to '加入伺服器', gate[:server], target: "_blank", class:"btn-tag" %></span>
-            <span ><%= link_to '編輯月門', edit_gate_path(gate) , class:"btn-tag" %></span>
-            <span><%= gate.intro %></span>
+            <div class="col-lg-12 gate-tool-top">
+                <%= link_to content_tag(:i,"  加入伺服器",class: "fa fa-moon-o").html_safe, gate[:server], target: "_blank", class:"btn-tag " %>
+                <%= link_to content_tag(:i,"  編輯",class: "fa fa-pencil-square-o").html_safe, edit_gate_path(gate) , class:"btn-warning push-right" %>    
+            </div>
+            
+            <div class="col-lg-12 gate-intro"><%= gate.intro %></div>
         </div>
 
         <div class="gate-box-tool">
-            <span class="gate-tag "><i class="glyphicon glyphicon-tags">：</i><% search_tag_button(gate.tag_list[0..2]) %></span>
-            <span class="gate-like "><%= like_gate_button(gate) %></span>
+            <span class="gate-tag col-lg-10"><i class="glyphicon glyphicon-tags">：</i><% search_tag_button(gate.tag_list[0..2]) %></span>
+            <span class="gate-like"><%= like_gate_button(gate) %></span>
         </div>
     </div>
     <% end %>

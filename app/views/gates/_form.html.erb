@@ -1,6 +1,6 @@
 <div class="container-fluid col-lg-8">
     <%= simple_form_for(gate) do |f| %>
-    <%= f.input :name,label: "名稱" %>
+    <%= f.input :name,label: "名稱",hint:"限制 30 字以內" %>
     <%= f.input :icon,label: "圖示", folder: "MoonGate/pictures", hint:"限制檔案大小為 1 MB 內,檔案類型為 JPG、JPEG、PNG" %>
     <%= f.input :server,label: "伺服器邀請碼", hint:"請於 Discord 頻道建立即時邀請並設定該連接永不過期" %>
     <%= f.input :tag_list,label: "標籤", input_html: {value: gate.tag_list.to_s}, hint:"每個標籤請用逗號','隔開，例如：絕地求生,英雄連盟,鬥陣特攻" %> 

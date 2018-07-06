@@ -11,6 +11,14 @@ $gate_box_width: 350px;
 $gate-box-color: rgb(255, 255, 255);
 $gate-header-height: 60px;
 $gate-body-height: 200px;
+
+.push-right {
+    float: right;
+}
+
+ul{
+    padding: 0;
+}
 a {
     color: $primary-color;
 }
@@ -55,15 +63,21 @@ a:hover {
 }
 
 .gate-box-name {
-    font-size: 1em;
-    padding: 0 auto;
-    vertical-align: middle;
-    height: 60px;
+    font-size: 1.2em;
+    padding: 10px;
+    min-height: 60px;
+    text-align: center;
+    overflow: scroll;
 }
 
 .gate-box-body {
     height: $gate_body_height;
     width: $gate_box_width;
+    padding: 5px
+}
+
+.gate-intro {
+    padding-top: 10px;
 }
 
 .gate-box-tool {
@@ -73,14 +87,11 @@ a:hover {
     text-align: left;
     border: 0px;
     border-top: 1px solid $bg-color;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow: scroll;
 }
 
-.gate-box-line {}
-
 .gate-tag {
-    width: 300px
+    overflow: scroll;
 }
 
 .gate-like {
@@ -102,12 +113,6 @@ a:hover {
     border-radius: 4px;
 }
 
-.btn-tag.focus {
-    color: #fff;
-    background-color: #1ca700;
-    border-color: #1ca700;
-}
-
 .btn-tag:hover {
     color: #fff;
     background-color: #1ca700;
@@ -126,14 +131,8 @@ a:hover {
     border: 1px solid transparent;
     white-space: nowrap;
     padding: 2px 8px;
-    font-size: 1em;
+    font-size: 0.8em;
     border-radius: 4px;
-}
-
-.btn-tag-like.focus {
-    color: #fff;
-    background-color: #1ca700;
-    border-color: #1ca700;
 }
 
 .btn-tag-like:hover {
@@ -146,4 +145,26 @@ a:hover {
 .glyphicon-tags {
     color: $bg-color;
     font-size: 1em;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: $primary-color;
+    border-color: $primary-color-dark;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 2px 8px;
+    font-size: 0.8em;
+    border-radius: 4px;
+}
+
+.btn-warning:hover {
+    color: #fff;
+    background-color: $primary-color-dark;
+    border-color: $primary-color-dark;
+    text-decoration: none;
 }
