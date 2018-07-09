@@ -65,4 +65,8 @@ module GatesHelper
             cl_image_tag(gate.icon, width:50, height:50, radius:"max" )
         end
     end
+
+    def show_add_gate_tip
+        render "/gates/manage_add_tip" if current_user.gates.count == 0
+    end
 end

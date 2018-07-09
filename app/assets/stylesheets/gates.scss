@@ -43,8 +43,7 @@ a:hover {
 
 .gate-box {
     box-sizing: border-box;
-    height: $gate_box_height;
-    width: $gate_box_width;
+    max-width: 360px;
     margin: 10px;
     padding: 0px 0px 0px 0px;
     background-color: $gate-box-color;
@@ -57,8 +56,7 @@ a:hover {
 }
 
 .gate-box-header {
-    height: $gate-header-height;
-    width: $gate_box_width;
+    height: 60px;
     background-color: $bg-color;
 }
 
@@ -78,8 +76,7 @@ a:hover {
 }
 
 .gate-box-body {
-    height: $gate_body_height;
-    width: $gate_box_width;
+    height: 300px;
     padding: 5px
 }
 
@@ -88,8 +85,7 @@ a:hover {
 }
 
 .gate-box-tool {
-    max-height: 30px;
-    max-width: $gate_box_width;
+
     padding: 7.5px;
     text-align: left;
     border: 0px;
