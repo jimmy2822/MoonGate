@@ -7,13 +7,18 @@ $secondary-color: #97c600;
 $secondary-color-dark: #89b300;
 $bg-color: #383331;
 $gate_box_height: 300px;
-$gate_box_width: 350px;
+$gate_box_width: 360px;
 $gate-box-color: rgb(255, 255, 255);
 $gate-header-height: 60px;
 $gate-body-height: 200px;
 
 .push-right {
     float: right;
+}
+
+.center{
+    text-align: center;
+    padding: 0px auto;
 }
 
 ul{
@@ -40,7 +45,7 @@ a:hover {
     box-sizing: border-box;
     height: $gate_box_height;
     width: $gate_box_width;
-    margin: 15px 30px 15px 0px;
+    margin: 10px;
     padding: 0px 0px 0px 0px;
     background-color: $gate-box-color;
     box-shadow: 1px 1px 1px 1px gray;
@@ -64,10 +69,12 @@ a:hover {
 
 .gate-box-name {
     font-size: 1.2em;
-    padding: 10px;
-    min-height: 60px;
+    max-height: 60px;
     text-align: center;
     overflow: scroll;
+    padding: 15px 5px 0px 5px;
+    line-height: 1.1em;
+    
 }
 
 .gate-box-body {
@@ -81,7 +88,7 @@ a:hover {
 }
 
 .gate-box-tool {
-    max-height: 40px;
+    max-height: 30px;
     max-width: $gate_box_width;
     padding: 7.5px;
     text-align: left;
@@ -167,4 +174,14 @@ a:hover {
     background-color: $primary-color-dark;
     border-color: $primary-color-dark;
     text-decoration: none;
+}
+
+.navbar-right {
+    margin-right: 0;
+}
+
+.gate-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }

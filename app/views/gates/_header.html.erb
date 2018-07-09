@@ -1,14 +1,12 @@
 <nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <%= link_to 'MOON GATE 月門', root_path, class:"navbar-brand" %>
-            <span><%= render 'gates/search_bar' %></span>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to '管理月門', manage_gates_path %></li>
-            <li><%= sign_button %></li>
-            <li><%= register_button %></li>
-        </ul>
+    <div class="navbar-header">
+        <%= link_to 'MOON GATE 月門', root_path, class:"navbar-brand" %>
+        <span><%= render 'gates/search_bar' %></span>
     </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to '管理月門', manage_gates_path %></li>
+        <li><%= sign_button %></li>
+        <li><%= register_button %></li>
+    </ul>
 </nav>
 <div class="sign-info"><%= user_name%></div>

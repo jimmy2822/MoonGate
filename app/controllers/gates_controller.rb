@@ -6,7 +6,7 @@ class GatesController < ApplicationController
     def index
         @gates = Gate.includes(:user, :like_logs, :taggings, :tags)
         @gates = Gate.left_joins(:like_logs).group(:id).order('COUNT(like_logs.id)DESC')
-		@tags = ActsAsTaggableOn::Tag.most_used(15)
+		@tags = ActsAsTaggableOn::Tag.most_used(20)
     end
 
     def show  

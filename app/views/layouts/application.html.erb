@@ -10,8 +10,8 @@
 
   <body>
     <div class="container">
-        <span style="float:right; font-size:18; color:red;"><%= flash[:notice] %></span>
         <%= render 'gates/header' %>
+        <div style="float:right; font-size:18; color:red;"><%= flash[:notice] %></div>
         <%= yield %>
     </div>
   </body>

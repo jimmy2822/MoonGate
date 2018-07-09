@@ -26,7 +26,7 @@ module GatesHelper
                 link_to content_tag(:i, gate.like_logs.count, class:"fa fa-heart-o").html_safe, gate_like_path(gate), method: :post, class:"btn-tag-like"
             end
         else
-            link_to '喜歡', user_session_path
+            link_to content_tag(:i, gate.like_logs.count, class:"fa fa-heart-o").html_safe, user_session_path, class:"btn-tag-like"
         end
     end
 
@@ -55,6 +55,14 @@ module GatesHelper
     end
     
     def register_button
-        link_to '會員註冊', new_user_registration_path, class:"btn" unless user_signed_in?
+        link_to '會員註冊', new_user_registration_path  unless user_signed_in?
+    end
+
+    def show_gate_icon(gate)
+        if gate.icon.to_s.empty?
+            image_tag("default_gate_icon.jpg",class:"gate-icon")
+        else
+            cl_image_tag(gate.icon, width:50, height:50, radius:"max" )
+        end
     end
 end
