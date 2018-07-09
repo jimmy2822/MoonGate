@@ -32,3 +32,6 @@
 
 # Ignore Cloudinary keys
 /config/cloudinary.yml
+
+# Ignore Testing files
+app/assets/images/default_gate_icon.jpg

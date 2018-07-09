@@ -52,7 +52,8 @@ class GatesController < ApplicationController
 	end
 	
 	def search_tag
-		@gates = Gate.tagged_with(params[:search_word])
+        @gates = Gate.tagged_with(params[:search_word])
+        @tags = ActsAsTaggableOn::Tag.most_used(20)
     end
     
     def manage
