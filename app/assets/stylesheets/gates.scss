@@ -16,14 +16,27 @@ $gate-body-height: 200px;
     float: right;
 }
 
-.center{
+.center {
     text-align: center;
     padding: 0px auto;
 }
 
-ul{
+.navbar-default {
+    background-color: $bg-color;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: $secondary-color;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: $secondary-color-dark;
+}
+
+ul {
     padding: 0;
 }
+
 a {
     color: $primary-color;
 }
@@ -71,7 +84,6 @@ a:hover {
     text-align: center;
     padding: 15px 5px 0px 5px;
     line-height: 1.1em;
-    
 }
 
 .gate-box-body {
@@ -84,7 +96,6 @@ a:hover {
 }
 
 .gate-box-tool {
-
     padding: 7.5px;
     text-align: left;
     border: 0px;
@@ -175,7 +186,7 @@ a:hover {
     margin-right: 0;
 }
 
-.gate-icon{
+.gate-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;

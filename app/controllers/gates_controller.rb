@@ -48,12 +48,23 @@ class GatesController < ApplicationController
 	def destroy
         @gate.destroy
         redirect_to gates_path 
-        # redirect_to gates_path, notice: "刪除成功"
 	end
 	
-	def search_tag
-        @gates = Gate.tagged_with(params[:search_word])
+    def search_tag
         @tags = ActsAsTaggableOn::Tag.most_used(20)
+        #如果使用者沒輸入搜尋字
+        if params[:search_word].empty? 
+            # 列出所有月門
+            @gates = Gate.includes(:user, :like_logs, :taggings, :tags)
+            @gates = Gate.left_joins(:like_logs).group(:id).order('COUNT(like_logs.id)DESC')
+            
+        else 
+            # 有輸入關鍵字對關鍵字查詢
+            @gates = Gate.tagged_with(params[:search_word])
+            flash.now[:notice] ="目前並無搜尋到相關月門呦～" if @gates.empty?
+        end
+        
+        
     end
     
     def manage
