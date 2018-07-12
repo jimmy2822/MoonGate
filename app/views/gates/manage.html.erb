@@ -1,8 +1,7 @@
 <div><%= link_to '新增月門', new_gate_path, class:"btn btn-primary" %></div>
-<%= show_add_gate_tip%>
+<div><h4><%= show_add_gate_tip%></h4></div>
 
 <div class="container-fluid col-lg-8">
-
 
     <% @gates.each do |gate| %>
     <div class="col-lg-8 gate-box ">

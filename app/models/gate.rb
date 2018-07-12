@@ -13,6 +13,8 @@ class Gate < ApplicationRecord
     # Gate as taggable
     acts_as_taggable
 
+    scope :public_server, -> { where( is_public:true )}
+
     private
     def image_size_validation
         errors[:icon] << "檔案必須小於於 1 MB !" if icon.size >= 1.megabytes
