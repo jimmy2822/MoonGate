@@ -6,10 +6,10 @@
     <%= f.input :tag_list,label: "標籤", input_html: {value: gate.tag_list.to_s}, hint:"每個標籤請用逗號','隔開，例如：絕地求生,英雄連盟,鬥陣特攻" %> 
     <%= f.input :intro,label: "簡介",hint:"將於月門列表中顯示簡介,限制 150 字以內" %>
     <%= f.input :intro_detail,label: "詳細資訊" ,hint: "顯示於月門檢視頁面" %>
-    <%= f.input :is_public,label: "是否公開?",hint: "  勾選公開後將於月門列表顯示" %>
-    <%= f.submit%>
-    <% end %>  
-    <%= link_to '刪除', gate_path(gate), method: "delete", class:"btn btn-danger" %>
+    <%= f.input :is_public,label: "是否公開?",hint: "  勾選後將於月門列表顯示" %>
+    <%= f.submit '確認送出' , class:"btn btn-primary" %>
+    <span><%= link_to '刪除月門', gate_path(gate), method: "delete", class:"btn btn-danger",style:"float:right;" %></span>
+    <% end %> 
 </div>
 
 

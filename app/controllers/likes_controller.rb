@@ -4,12 +4,12 @@ class LikesController < ApplicationController
 
     def create
         @gate.like_logs.create(user: current_user)
-        redirect_to gates_path
+        redirect_to request.referrer
     end
 
     def destroy
         @gate.like_logs.by(current_user).destroy_all
-        redirect_to gates_path
+        redirect_to request.referrer
     end
     
     private

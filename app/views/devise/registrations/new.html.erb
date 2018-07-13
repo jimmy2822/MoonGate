@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>註冊</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -9,20 +9,20 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :密碼 %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(最少 <%= @minimum_password_length %> 個字)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :再次確認密碼 %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "註冊" %>
   </div>
 <% end %>
 
