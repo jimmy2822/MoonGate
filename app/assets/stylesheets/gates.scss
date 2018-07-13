@@ -11,6 +11,10 @@ $gate_box_width: 360px;
 $gate-box-color: rgb(255, 255, 255);
 $gate-header-height: 60px;
 $gate-body-height: 200px;
+.navbar-icon {
+    font-size: 1em;
+    font-weight: bold;
+}
 
 .push-right {
     float: right;
@@ -37,11 +41,11 @@ ul {
     padding: 0;
 }
 
-a {
+.gate-box-header a {
     color: $primary-color;
 }
 
-a:hover {
+.gate-box-header a:hover {
     color: $primary-color-dark;
 }
 

@@ -3,9 +3,9 @@ module GatesHelper
     def sign_button
         if user_signed_in?
             @name = current_user[:email].split("@")
-            link_to "會員登出 ( #{@name[0]} )", destroy_user_session_path, method: "delete"
+            link_to content_tag(:i, " 會員登出 ( #{@name[0]} )", class:"fa fa-user"), destroy_user_session_path, method: "delete"
         else
-            link_to "會員登入", user_session_path
+            link_to content_tag(:i," 會員登入",class:"fa fa-user"), user_session_path
         end
     end
 
@@ -49,7 +49,7 @@ module GatesHelper
     
     #未登錄時顯示註冊按鈕
     def register_button
-        link_to '會員註冊', new_user_registration_path  unless user_signed_in?
+        link_to content_tag(:i," 會員註冊",class:"fa fa-address-card"), new_user_registration_path  unless user_signed_in?
     end
 
     def show_gate_icon(gate)

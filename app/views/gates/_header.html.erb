@@ -1,11 +1,11 @@
 <nav class="navbar navbar-default">
     <div class="navbar-header">
         <%= link_to 'MOON GATE 月門', root_path, class:"navbar-brand" %>
-        <%= render 'gates/search_bar' %>
+        <span><%= render 'gates/search_bar' %></span>
     </div>
     <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to '月門列表', root_path %></li>
-        <li><%= link_to '管理月門', manage_gates_path %></li>
+        <li><%= link_to content_tag(:span," 月門列表",class:"fa fa-align-justify"), root_path%></li>
+        <li><%= link_to content_tag(:span," 管理月門",class:"fa fa-dashboard"), manage_gates_path %></li>
         <li><%= sign_button %></li>
         <li><%= register_button %></li>
     </ul>

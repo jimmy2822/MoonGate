@@ -1,6 +1,6 @@
 <%= form_tag(search_tag_gates_path, method: "get", class:"search-form") do %>
-  <%= text_field_tag(:search_word, nil, placeholder:'請輸入標籤...', class:"", value: params[:search_word] ) %>
-  <%= submit_tag("搜尋",class:"btn btn-primary") %>
+  <span><%= text_field_tag(:search_word, nil, placeholder:'請輸入標籤...', class:"", value: params[:search_word] ) %></span>
+  <span><%= submit_tag("搜尋",class:"btn btn-primary") %></span>
 <% end %>
 
 
