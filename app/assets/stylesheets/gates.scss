@@ -11,9 +11,9 @@ $gate_box_width: 360px;
 $gate-box-color: rgb(255, 255, 255);
 $gate-header-height: 60px;
 $gate-body-height: 200px;
-.navbar-icon {
-    font-size: 1em;
-    font-weight: bold;
+.show-gate-icon{
+    margin-top: 50%;
+    margin-bottom: 50%;
 }
 
 .push-right {
@@ -80,6 +80,7 @@ ul {
 .gate-box-icon {
     padding: 5px;
     width: 60;
+    margin: 0px auto;
 }
 
 .gate-box-name {
@@ -114,6 +115,12 @@ ul {
 .gate-like {
     float: right;
 }
+
+.show-name{
+    margin: auto 0 auto 0;
+}
+
+
 
 .btn-tag {
     color: #fff;
@@ -195,3 +202,4 @@ ul {
     height: 50px;
     border-radius: 50%;
 }
+

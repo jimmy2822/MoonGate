@@ -10,7 +10,7 @@
                 <%= cl_image_tag(gate.icon, width:50, height:50, radius:"max" ) %>
             </div>
             <div class="col-lg-10 gate-box-name">
-                <%= link_to gate.name, gate_path(gate[:id]) %>
+                <%= link_to gate.name, gate_path(gate[:id]), target:"_blank" %>
             </div>
         </div>
 

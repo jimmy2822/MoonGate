@@ -56,7 +56,7 @@ module GatesHelper
         if gate.icon.to_s.empty?
             image_tag("default_gate_icon.jpg",class:"gate-icon")
         else
-            cl_image_tag(gate.icon, width:50, height:50, radius:"max" )
+            link_to cl_image_tag(gate.icon, width:50, height:50, radius:"max" ),gate_path(gate),target:"_blank"
         end
     end
 

@@ -39,9 +39,9 @@ class GatesController < ApplicationController
 		if @gate.update(gate_params)
 			@gate.tag_list.add(params[:tag])
 			@gate.save
-			redirect_to gates_path, notice: "編輯 SUCCESS!"
+			redirect_to manage_gates_path, notice: "編輯成功！"
 		else	
-			render :edit, notice: "編輯失敗"
+			render :edit, notice: "編輯失敗！"
 		end
     end
 
