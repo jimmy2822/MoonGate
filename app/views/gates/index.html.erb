@@ -27,7 +27,7 @@
                 <%= link_to content_tag(:i,"  加入伺服器",class: "fa fa-moon-o").html_safe, gate[:server], target: "_blank", class:"btn-tag " %>
             </div>
             
-            <div class="col-lg-12 col-xs-12 gate-intro"><%= gate.intro %></div>
+            <div class="col-lg-12 col-xs-12 gate-intro"><%= truncate(gate.intro, length:280)%></div>
         </div>
 
         <div class="gate-box-tool">

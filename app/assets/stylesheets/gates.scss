@@ -1,19 +1,37 @@
 // Place all the styles related to the Gates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$primary-color: #FF4003;
-$primary-color-dark: rgb(209, 52, 0);
-$secondary-color: #97c600;
-$secondary-color-dark: #89b300;
-$bg-color: #383331;
+$primary-color: #2ecc71;
+$primary-color-dark: #16a085;
+$secondary-color: #4CBBE8;
+$secondary-color-light: rgb(139, 222, 255);
+$secondary-color-dark: #2980b9;
+$btn-color: rgb(32, 192, 255);
+$btn-color-dark:rgb(26, 158, 211);
+$bg-color: #2c3e50;
 $gate_box_height: 300px;
 $gate_box_width: 360px;
 $gate-box-color: rgb(255, 255, 255);
 $gate-header-height: 60px;
 $gate-body-height: 200px;
-.show-gate-icon{
+
+.invalid-feedback{
+    color: red;
+}
+
+.show-gate-icon {
     margin-top: 50%;
     margin-bottom: 50%;
+}
+
+.navbar-default .navbar-brand {
+    color: $secondary-color;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: $secondary-color-dark;
+    background-color: transparent;
 }
 
 .push-right {
@@ -34,7 +52,7 @@ $gate-body-height: 200px;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-    background-color: $secondary-color-dark;
+    background-color: $secondary-color-light;
 }
 
 ul {
@@ -116,16 +134,14 @@ ul {
     float: right;
 }
 
-.show-name{
+.show-name {
     margin: auto 0 auto 0;
 }
 
-
-
 .btn-tag {
     color: #fff;
-    background-color: $secondary-color;
-    border-color: $secondary-color-dark;
+    background-color: $btn-color;
+    border-color: $btn-color;
     display: inline-block;
     margin-bottom: 0;
     text-align: center;
@@ -139,15 +155,15 @@ ul {
 
 .btn-tag:hover {
     color: #fff;
-    background-color: #1ca700;
-    border-color: #1ca700;
+    background-color: $btn-color-dark;
+    border-color: $btn-color-dark;
     text-decoration: none;
 }
 
 .btn-tag-like {
     color: #fff;
-    background-color: $secondary-color;
-    border-color: $secondary-color-dark;
+    background-color: $btn-color;
+    border-color: $btn-color;
     display: inline-block;
     margin-bottom: 0;
     text-align: center;
@@ -161,8 +177,8 @@ ul {
 
 .btn-tag-like:hover {
     color: #fff;
-    background-color: #1ca700;
-    border-color: #1ca700;
+    background-color: $btn-color-dark;
+    border-color: $btn-color-dark;
     text-decoration: none;
 }
 
@@ -202,4 +218,3 @@ ul {
     height: 50px;
     border-radius: 50%;
 }
-

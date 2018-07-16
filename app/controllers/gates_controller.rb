@@ -10,7 +10,7 @@ class GatesController < ApplicationController
     end
 
     def show  
-        @gate = Gate.find(params[:id])     
+        @gate = Gate.public_server.find(params[:id])     
     end
 
     # 在 Controller 設定實體變數 @gate 給 view 的 form_for 使用
