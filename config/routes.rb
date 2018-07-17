@@ -11,7 +11,14 @@ Rails.application.routes.draw do
     resource :like, only: [:create, :destroy]
   end
 
+
+
   namespace :admin do
     resources :gates
   end
+
+  scope :admin do
+    root to: 'admin#dashboard'
+  end
+
 end
