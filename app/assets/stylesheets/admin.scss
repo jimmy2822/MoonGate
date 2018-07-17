@@ -1,0 +1,39 @@
+$admin-primary-color:#636e72;
+$admin-secondary-color:#37bc9b;
+
+.admin-header {
+    height: 60px;
+    background: $admin-secondary-color;
+}
+
+.sidebar-nav {
+    padding: 0;
+}
+
+.admin-menu {
+    background: $admin-primary-color;
+    top: 60px;
+    bottom: 0;
+    position: fixed;
+    width: 16.666%;
+    text-align: center;
+    line-height: 3em;
+    font-size: 1.2em;
+}
+
+.admin-menu>ul {
+    list-style-type: none;
+}
+
+.admin-menu>ul>li>a {
+    color: aliceblue;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.admin-menu>ul>li:hover {
+    background-color: rgb(89, 167, 156);
+    text-decoration: none;
+}

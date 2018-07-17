@@ -9,8 +9,10 @@
   </head>
 
   <body>
-    <div class="container">
-        <%= yield %>
+    <div class="container-fluid">
+      <div class="container-fluid admin-header"><%= render 'admin/header' %></div>
+      <div class="col-lg-2 sidebar-nav"><%= render 'admin/sidebar' %></div>
+      <div class="col-lg-10"><%= yield %></div>      
     </div>
   </body>
 </html>

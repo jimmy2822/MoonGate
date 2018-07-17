@@ -1,4 +1,2 @@
-module Admin
-    class GatesController < Admin::BaseController
-    end
+class GatesController < Admin::BaseController
 end
