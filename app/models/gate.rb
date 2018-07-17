@@ -4,12 +4,13 @@ class Gate < ApplicationRecord
 
     # validation
     validates_presence_of(:name, :server)
-
+    validates_length_of :name, maximum:60
+    validates_length_of :intro, maximum:250
 
     # mount CarrierWave uploader
     mount_uploader :icon, ImageUploader
 
-    # Valid icon size < 500 kb
+    # Valid icon size < 1mb
     validates_processing_of :icon
     validate :image_size_validation
  
