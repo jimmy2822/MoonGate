@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>會員 ID</th>
+            <th>會員帳號</th>
+            <th>登入次數</th>
+            <th>權限</th>
+            <th>最後登入 IP</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% @users.each do |user|%>
+        <tr>
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <td><%= user.sign_in_count%></td>
+            <td><%= user.role%></td>
+            <td><%= user.last_sign_in_ip%></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
