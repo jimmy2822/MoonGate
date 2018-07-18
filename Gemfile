@@ -53,6 +53,9 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'carrierwave'
 gem 'cloudinary'
 
+# divide pages
+gem 'kaminari'
+
 
 
 # Reduces boot times through caching; required in config/boot.rb
