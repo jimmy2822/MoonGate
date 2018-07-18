@@ -4,3 +4,13 @@
 
 $(document).on "turbolinks:load", ->
     $().fadeIn 'slow'
+
+
+$(window).scroll -> 
+    url = $('.pagination .next a').attr('href')
+    
+    if url && $(window).scrollTop() > $(document).height() - $(window).height() - 150
+        $('.pagination').text("Loading...")
+        $.getScript(url)
+        console.log($.getScript(url))
+        
