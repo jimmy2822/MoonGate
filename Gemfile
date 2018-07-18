@@ -71,6 +71,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-livereload', '~> 2.5', require: false
+
+  # Generate testing data
+  gem 'faker'
+
 end
 
 group :test do
