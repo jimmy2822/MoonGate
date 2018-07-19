@@ -66,7 +66,7 @@ class GatesController < ApplicationController
     end
     
     def manage
-        @gates = User.find(current_user[:id]).gates
+        @gates = User.find(current_user[:id]).gates.page(params[:page]).per(8)
     end
 
     private

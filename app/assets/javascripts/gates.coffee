@@ -2,15 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on "turbolinks:load", ->
-    $().fadeIn 'slow'
+#$(document).on "turbolinks:load", ->
+#   $().fadeIn 'slow'
 
 
 $(window).scroll -> 
     url = $('.pagination .next a').attr('href')
     
-    if url && $(window).scrollTop() > $(document).height() - $(window).height() - 150
+    if url && $(window).scrollTop() > $(document).height() - $(window).height() - 600
         $('.pagination').text("Loading...")
         $.getScript(url)
-        console.log($.getScript(url))
-        

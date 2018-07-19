@@ -1,7 +1,7 @@
 <div><%= link_to '新增月門', new_gate_path, class:"btn btn-primary" %></div>
 <div><h4><%= show_add_gate_tip%></h4></div>
 
-<div class="container-fluid col-lg-8">
+<div class="container-fluid col-lg-8 " id="gates-list">
 
     <% @gates.each do |gate| %>
     <div class="col-lg-8 gate-box ">
@@ -29,4 +29,6 @@
         </div>
     </div>
     <% end %>
+    
+    <div class="center"><%= paginate(@gates)%></div>
 </div>
