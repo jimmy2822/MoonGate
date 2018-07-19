@@ -14,4 +14,5 @@
 //= require bootstrap-sprockets
 //= require activestorage
 //= require turbolinks
+//= require admin
 //= require_tree .

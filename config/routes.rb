@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     root to: 'admin#dashboard'
     get 'manage_gates' => 'admin#manage_gates'
     get 'manage_users' => 'admin#manage_users'
+    delete 'destroy_mutiple' => 'admin#destroy_mutiple'
   end
 
 end
