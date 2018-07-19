@@ -1,6 +1,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th><%= check_box_tag("checked")%></th>
             <th>管理工具</th>
             <th>ID</th>
             <th>名稱</th>
@@ -12,7 +13,8 @@
     <tbody>
         <% @gates.each do |gate|%>
         <tr>
-            <td><%= link_to "刪除", admin_gate_path(gate) , method:"delete"  %></td>
+            <td><%= check_box_tag("checked")%></td>
+            <td><%= link_to "刪除", admin_gate_path(gate) , method:"delete"  %> </td>
             <td><%= gate.id %></td>
             <td><%= gate.name %></td>
             <td><%= gate.user.email%></td>

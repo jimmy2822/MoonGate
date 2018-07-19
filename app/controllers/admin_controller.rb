@@ -6,6 +6,7 @@ class AdminController < Admin::BaseController
 
     def manage_gates
         @gates = Gate.all.page(params[:page]).per(50)
+
     end
 
     def manage_users

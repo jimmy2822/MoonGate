@@ -2,6 +2,11 @@ $admin-primary-color:#2c3e50;
 $admin-secondary-color: #1abc9c;
 $admin-secondary-color-dark:#27ae60;
 $admin-font-color:#3498db;
+
+.scrollable{
+    margin-top: 60px;
+}
+
 .admin-header {
     height: 60px;
     background: $admin-secondary-color;
@@ -38,8 +43,8 @@ $admin-font-color:#3498db;
 
 .admin-menu {
     background: $admin-primary-color;
-    top: 60px;
-    bottom: 0;
+    height: 100%;
+    margin-top: 60px;
     position: fixed;
     width: 16.666%;
     text-align: center;
