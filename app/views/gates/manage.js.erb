@@ -1,7 +1,5 @@
 $('#gates-list').append('<%= j render 'manage_gates', gates: @gates %>');
 
-console.log("append complete!")
-
 <% if @gates.next_page %>
   $('.pagination').replaceWith('<%= j paginate(@gates) %>');
 <% else %>

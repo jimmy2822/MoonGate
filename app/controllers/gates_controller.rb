@@ -55,9 +55,7 @@ class GatesController < ApplicationController
         #如果使用者沒輸入搜尋字
         if params[:search_word].empty? 
             # 列出所有月門
-            @gates = Gate.public_server.includes(:user, :like_logs, :taggings, :tags)
-            @gates = Gate.public_server.left_joins(:like_logs).group(:id).order('COUNT(like_logs.id)DESC')
-            
+            @gates = Gate.public_server.left_joins(:like_logs).group(:id).order('COUNT(like_logs.id)DESC').page(params[:page]).per(9)
         else 
             # 有輸入關鍵字對關鍵字查詢
             @gates = Gate.public_server.tagged_with(params[:search_word])
