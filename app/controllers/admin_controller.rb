@@ -11,7 +11,6 @@ class AdminController < Admin::BaseController
     def manage_users
         @users = User.all.page(params[:page]).per(50)
     end 
-
     def destroy_mutiple
         Gate.destroy(params[:items_ids]) unless params[:items_ids].blank?
         redirect_to '/admin/manage_gates'
