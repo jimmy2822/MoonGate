@@ -53,12 +53,12 @@ class GatesController < ApplicationController
     def search_tag
         @tags = ActsAsTaggableOn::Tag.most_used(20)
         #如果使用者沒輸入搜尋字
-        if params[:search_word].empty? 
+        if params[:search_word].empty?
             # 列出所有月門
             @gates = Gate.public_server.left_joins(:like_logs).group(:id).order('COUNT(like_logs.id)DESC').page(params[:page]).per(9)
         else 
             # 有輸入關鍵字對關鍵字查詢
-            @gates = Gate.public_server.tagged_with(params[:search_word])
+            @gates = Gate.public_server.tagged_with(params[:search_word]).page(params[:page]).per(9)
             flash.now[:notice] ="目前並無搜尋到相關月門呦～" if @gates.empty?
         end
     end

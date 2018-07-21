@@ -11,7 +11,7 @@
         </tr>
     </thead>
     
-    <tbody>
+    <tbody id="gates-list">
         <% @gates.each do |gate|%>
         <tr>
             <td><%= check_box_tag("items_ids[]", gate.id)%></td>
