@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get 'manage_gates' => 'admin#manage_gates'
     get 'manage_users' => 'admin#manage_users'
     delete 'destroy_mutiple' => 'admin#destroy_mutiple'
+    delete 'destroy_mutiple_user' => 'admin#destroy_mutiple_user' 
   end
 
 end

@@ -1,6 +1,8 @@
+<div><%= form_tag destroy_mutiple_user_path, method:"delete" do%> <%= submit_tag '刪除選中', class:"btn btn-danger" %></div>
 <table class="table">
     <thead>
         <tr>
+            <th><input onclick="toggle_checkall('items', this.checked) " type="checkbox"></th>
             <th>會員 ID</th>
             <th>會員帳號</th>
             <th>登入次數</th>
@@ -12,6 +14,7 @@
     <tbody id="users-list">
         <% @users.each do |user|%>
         <tr>
+            <td><%= check_box_tag("items_ids[]", user.id)%></td>
             <td><%= user.id %></td>
             <td><%= user.email %></td>
             <td><%= user.sign_in_count%></td>
@@ -22,3 +25,4 @@
     </tbody>
 </table>
 <div class="center"><%= paginate(@users)%></div>
+<% end %>
