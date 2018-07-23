@@ -1,0 +1,64 @@
+$admin-primary-color:#2c3e50;
+$admin-secondary-color: #1abc9c;
+$admin-secondary-color-dark:#27ae60;
+$admin-font-color:#3498db;
+.admin-header {
+    height: 60px;
+    background: $admin-secondary-color;
+}
+
+.admin-header-list {
+    float: right;
+    height: 100%;
+}
+
+.admin-header-list>ul>li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1.5em;
+    height: 60px;
+}
+
+.admin-header-list>ul>li>a {
+    color: aliceblue;
+    height: 100%;
+}
+
+.admin-header-list>ul>li>a>i {
+    height: 60px;
+}
+
+.admin-header-list>ul>li:hover {
+    background: $admin-secondary-color-dark;
+}
+
+.sidebar-nav {
+    padding: 0;
+}
+
+.admin-menu {
+    background: $admin-primary-color;
+    top: 60px;
+    bottom: 0;
+    position: fixed;
+    width: 16.666%;
+    text-align: center;
+    line-height: 3em;
+    font-size: 1.2em;
+}
+
+.admin-menu>ul {
+    list-style-type: none;
+}
+
+.admin-menu>ul>li>a {
+    color: aliceblue;
+    text-decoration: none;
+    display: block;
+    height: 60;
+}
+
+.admin-menu>ul>li:hover {
+    background-color: rgb(89, 167, 156);
+    text-decoration: none;
+}

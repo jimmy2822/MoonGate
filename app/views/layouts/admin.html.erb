@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MoonGate月門</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="container-fluid admin-header"><%= render 'admin/header' %></div>
+      <div class="col-lg-2 sidebar-nav"><%= render 'admin/sidebar' %></div>
+      <div class="col-lg-10"><%= yield %></div>      
+    </div>
+  </body>
+</html>

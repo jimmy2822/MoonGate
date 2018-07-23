@@ -53,6 +53,9 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'carrierwave'
 gem 'cloudinary'
 
+# divide pages
+gem 'kaminari'
+
 
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -71,6 +74,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-livereload', '~> 2.5', require: false
+
+  # Generate testing data
+  gem 'faker'
+
 end
 
 group :test do
