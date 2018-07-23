@@ -1,3 +1,6 @@
+<%= form_tag '/manage_gates', method:"get" do %>
+  <%= text_field_tag :search, params[:search], placeholder:"搜尋..." %>
+<% end %>
 <div><%= form_tag destroy_mutiple_path, method:"delete" do%> <%= submit_tag '刪除選中', class:"btn btn-danger" %></div>
 <table class="table">
     <thead>
@@ -6,7 +9,7 @@
             <th>ID</th>
             <th>名稱</th>
             <th>擁有者帳號</th>
-            <th>管理工具</th>
+            <th>管理工具</th>
         </tr>
     </thead>
     

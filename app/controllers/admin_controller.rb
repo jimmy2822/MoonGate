@@ -5,7 +5,12 @@ class AdminController < Admin::BaseController
     end
 
     def manage_gates
-        @gates = Gate.all.page(params[:page]).per(50)
+        if params[:search]
+            @gates = Gate.where('name LIKE ?', '%#{params[:search]}')                
+        else
+            @gates = Gate.all.page(params[:page]).per(50)
+        end
+            
     end
 
     def manage_users
