@@ -10,7 +10,7 @@
 
 <div class="col-lg-12"><h4><%= flash[:notice]%></h4></div>
 
-<div class="container-fluid col-lg-12">
+<div class="container-fluid col-lg-12" id="gates-list">
     <% @gates.each do |gate| %>
     <div class="col-lg-4 gate-box container">
         <div class="gate-box-header">
@@ -37,3 +37,5 @@
     </div>
     <% end %>
 </div>
+
+<div class="col-lg-12 center"> <%=paginate @gates%> </div>

@@ -1,0 +1,7 @@
+$('#users-list').append('<%= j render 'gates', gates: @users %>');
+
+<% if @gates.next_page %>
+  $('.pagination').replaceWith('<%= j paginate(@gates) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

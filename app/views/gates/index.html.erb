@@ -10,30 +10,8 @@
 
 <div class="col-lg-12"><h4><%= flash[:notice]%></h4></div>
 
-<div class="container-fluid col-lg-12 col-xs-12">
-    <% @gates.each do |gate| %>
-    <div class="col-lg-4 col-xs-12 gate-box container">
-        <div class="gate-box-header">
-            <div class="col-lg-2 col-xs-2 gate-box-icon">
-                <%= show_gate_icon(gate) %>
-            </div>
-            <div class="col-lg-10 col-xs-10 gate-box-name">
-                <%= link_to gate.name, gate_path(gate[:id]), target:"_blank" %>
-            </div>
-        </div>
-
-        <div class="gate-box-body">
-            <div class="col-lg-12 col-xs-12 gate-tool-top">
-                <%= link_to content_tag(:i,"  加入伺服器",class: "fa fa-moon-o").html_safe, gate[:server], target: "_blank", class:"btn-tag " %>
-            </div>
-            
-            <div class="col-lg-12 col-xs-12 gate-intro"><%= truncate(gate.intro, length:280)%></div>
-        </div>
-
-        <div class="gate-box-tool">
-            <span class="gate-tag col-lg-10"><i class="glyphicon glyphicon-tags">：</i><% search_tag_button(gate.tag_list[0..2]) %></span>
-            <span class="gate-like"><%= like_gate_button(gate) %></span>
-        </div>
-    </div>
-    <% end %>
+<div class="container-fluid col-lg-12 col-xs-12" id="gates-list">
+    <%= render 'gates', gates: @gates %>
 </div>
+
+<div class="col-lg-12 center"><%= paginate @gates %></div>

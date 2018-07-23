@@ -1,24 +1,26 @@
+<div><%= form_tag destroy_mutiple_path, method:"delete" do%> <%= submit_tag '刪除選中', class:"btn btn-danger" %></div>
 <table class="table">
     <thead>
         <tr>
-            <th>管理工具</th>
+            <th><input onclick="toggle_checkall('items', this.checked) " type="checkbox"></th>
             <th>ID</th>
             <th>名稱</th>
             <th>擁有者帳號</th>
-            <th></th>
+            <th>管理工具</th>
         </tr>
     </thead>
     
-    <tbody>
+    <tbody id="gates-list">
         <% @gates.each do |gate|%>
         <tr>
-            <td><%= link_to "刪除", admin_gate_path(gate) , method:"delete"  %></td>
+            <td><%= check_box_tag("items_ids[]", gate.id)%></td>
             <td><%= gate.id %></td>
             <td><%= gate.name %></td>
             <td><%= gate.user.email%></td>
-            <td></td>
-            <td></td>
+            <td><%= link_to "刪除", admin_gate_path(gate) , method:"delete", class:"btn btn-danger"  %> </td>
         </tr>
         <% end %>
     </tbody>
 </table>
+<div class="center"><%= paginate(@gates)%></div>
+<% end %>

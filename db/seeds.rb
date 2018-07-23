@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if Rails.env == "development"
-    5000.times do |fake|
-        Gate.create!(:name => Faker::Lorem.words(3) , :intro => Faker::Lorem.sentence(20, true),user_id:1 ,server:"666",is_public:"1" )
+    500.times do |fake|
+        Gate.create!(:name => Faker::Lorem.word , :intro => Faker::Lorem.sentence(20, true), user_id:1 , server:"666", is_public:"1" )
     end
 end
 

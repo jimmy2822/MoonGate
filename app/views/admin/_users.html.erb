@@ -1,0 +1,10 @@
+<% @users.each do |user|%>
+<tr>
+    <td><%= user.id %></td>
+    <td><%= user.email %></td>
+    <td><%= user.sign_in_count%></td>
+    <td><%= user.role%></td>
+    <td><%= user.last_sign_in_ip%></td>
+</tr>
+<% end %>
+

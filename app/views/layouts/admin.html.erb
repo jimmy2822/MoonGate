@@ -10,9 +10,9 @@
 
   <body>
     <div class="container-fluid">
-      <div class="container-fluid admin-header"><%= render 'admin/header' %></div>
-      <div class="col-lg-2 sidebar-nav"><%= render 'admin/sidebar' %></div>
-      <div class="col-lg-10"><%= yield %></div>      
+      <div class="container-fluid admin-header navbar-fixed-top"><%= render 'admin/header' %></div>
+      <div class="col-lg-2 sidebar-nav container"><%= render 'admin/sidebar' %></div>
+      <div class="col-lg-10 container scrollable"><%= yield %></div>      
     </div>
   </body>
 </html>
