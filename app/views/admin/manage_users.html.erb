@@ -1,4 +1,4 @@
-<div><%= form_tag destroy_mutiple_user_path, method:"delete" do%> <%= submit_tag '刪除選中', class:"btn btn-danger" %></div>
+<div><%= form_tag admin_destroy_mutiple_user_path, method:"delete" do%> <%= submit_tag '刪除選中', class:"btn btn-danger" %></div>
 <table class="table">
     <thead>
         <tr>
@@ -7,6 +7,7 @@
             <th>會員帳號</th>
             <th>登入次數</th>
             <th>權限</th>
+            <th>最後登入日期</th>
             <th>最後登入 IP</th>
         </tr>
     </thead>
@@ -19,6 +20,7 @@
             <td><%= user.email %></td>
             <td><%= user.sign_in_count%></td>
             <td><%= user.role%></td>
+            <td><%= user.last_sign_in_at%></td>
             <td><%= user.last_sign_in_ip%></td>
         </tr>
         <% end %>

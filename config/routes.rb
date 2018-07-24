@@ -14,14 +14,14 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :gates
+    get :manage_gates
+    get :manage_users
+    delete :destroy_mutiple
+    delete :destroy_mutiple_user
   end
 
   scope :admin do
     root to: 'admin#dashboard'
-    get 'manage_gates' => 'admin#manage_gates'
-    get 'manage_users' => 'admin#manage_users'
-    delete 'destroy_mutiple' => 'admin#destroy_mutiple'
-    delete 'destroy_mutiple_user' => 'admin#destroy_mutiple_user' 
   end
 
 end

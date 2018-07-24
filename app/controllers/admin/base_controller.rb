@@ -1,14 +1,14 @@
 module Admin
-    class BaseController < ApplicationController
-        layout 'admin'
-        before_action :authenticate_user!
-        before_action :verify_admin
+  class BaseController < ApplicationController
+    layout 'admin'
+    before_action :authenticate_user!
+    before_action :verify_admin
 
-        private
+    private
 
-        def verify_admin
-            return if current_user.admin?
-            redirect_to root_path, alert: "Your are not admin!"
-        end
+    def verify_admin
+      return if current_user.admin?
+      redirect_to root_path, alert: "Your are not admin!"
     end
+  end
 end

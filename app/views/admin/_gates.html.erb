@@ -4,6 +4,7 @@
             <td><%= gate.id %></td>
             <td><%= gate.name %></td>
             <td><%= gate.user.email%></td>
+            <td><%= gate.created_at %></td>
             <td><%= link_to "刪除", admin_gate_path(gate) , method:"delete", class:"btn btn-danger"  %> </td>
         </tr>
 <% end %>
