@@ -5,13 +5,14 @@
                 <%= show_gate_icon(gate) %>
             </div>
             <div class="col-lg-10 col-xs-10 gate-box-name">
-                <%= link_to gate.name, gate_path(gate[:id]), target:"_blank" %>
+                <%= link_to gate.name, gate_path(gate), target:"_blank" %>
             </div>
         </div>
 
         <div class="gate-box-body">
             <div class="col-lg-12 col-xs-12 gate-tool-top">
-                <%= link_to content_tag(:i,"  加入伺服器",class: "fa fa-moon-o").html_safe, gate[:server], target: "_blank", class:"btn-tag " %>
+              <span class="join-link" id="join-<%= gate.id %>-link" data-server="<%= gate.server %>"></span>
+                <%- link_to content_tag(:i,"  加入伺服器",class: "fa fa-moon-o").html_safe, gate[:server], target: "_blank", class:"btn-tag " %>
             </div>
             
             <div class="col-lg-12 col-xs-12 gate-intro"><%= truncate(gate.intro, length:280)%></div>
@@ -23,3 +24,5 @@
         </div>
     </div>
 <% end %>
+
+

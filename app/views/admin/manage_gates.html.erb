@@ -8,7 +8,7 @@
         <tr>
             <th><input onclick="toggle_checkall('items', this.checked) " type="checkbox"></th>
             <th>ID</th>
-            <th>名稱</th>
+            <th><%= link_to '名稱', admin_manage_gates_path(sort: (params[:sort] || []).concat(['name']).uniq) %></th>
             <th>擁有者帳號</th>
             <th>創建時間</th>
             <th>管理工具</th>

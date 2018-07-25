@@ -2,8 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-#$(document).on "turbolinks:load", ->
-#   $().fadeIn 'slow'
+
+# $(document).on 'turbolinks:before-cache', ->
+# $('body').hide()
+
+# $(document).on "turbolinks:load", ->
+# $('body').hide().delay(300).fadeIn('slow')
 
 
 $(window).scroll -> 

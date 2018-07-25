@@ -15,3 +15,21 @@
 </div>
 
 <div class="col-lg-12 center"><%= paginate @gates %></div>
+
+<%- content_for :javascript do %>
+    <script type="application/javascript">
+      $(document).ready(function() {
+        $('.join-link').each(function() {
+          var self = $(this);
+          fetch('https://discordapp.com/api/guilds/' + self.data('server') + '/widget.json')
+            .then(res => res.json())
+            .then(function(json) {
+              if(json.instant_invite) {
+                var link = $('<a href="' + json.instant_invite + '" class="btn-tag" target="_blank"><i class="fa fa-moon-o"></i>加入伺服器</a>');
+                self.append(link);
+              }
+            });
+        });
+      });
+    </script>
+<%- end %>

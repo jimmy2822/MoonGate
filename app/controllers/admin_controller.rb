@@ -6,10 +6,13 @@ class AdminController < Admin::BaseController
 
   def manage_gates
     if params[:search] 
-      @gates = Gate.where('name LIKE ?', "%#{params[:search]}%").page(params[:page]).per(50)
+      @gates = Gate.where('name LIKE ?', "%#{params[:search]}%")
     else
-      @gates = Gate.all.page(params[:page]).per(50)
+      @gates = Gate.all
     end
+
+    @gates = sort_gates(@gates) if params[:sort].present?
+    @gates = @gates.page(params[:page]).per(50)
   end
 
   def manage_users
@@ -24,5 +27,15 @@ class AdminController < Admin::BaseController
   def destroy_mutiple_user
     User.destroy(params[:items_ids]) unless params[:items_ids].blank?
     redirect_to "/admin/manage_users" 
+  end
+
+  def sort_gates(gates)
+    params[:sort].reduce(gates) do |prev, sort|
+      case sort
+      when 'name' then prev.order(name: :asc)
+      when 'created_at' then prev.order(created_at: :desc)
+      else prev
+      end
+    end
   end
 end
