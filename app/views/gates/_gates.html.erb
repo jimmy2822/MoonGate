@@ -12,7 +12,7 @@
         <div class="gate-box-body">
             <div class="col-lg-12 col-xs-12 gate-tool-top">
               <span class="join-link" id="join-<%= gate.id %>-link" data-server="<%= gate.server %>">
-                <%= link_to (content_tag :i," 加入伺服器",class:"fa fa-moon-o").html_safe, join_server_gates_path(gate_server:gate.server), class:"btn-tag" %>
+                <%= link_to (content_tag :i," 加入伺服器",class:"fa fa-moon-o").html_safe, join_server_gates_path(:gate_server =>gate.server ), class:"btn-tag" %>
               </span>
             </div>
             
