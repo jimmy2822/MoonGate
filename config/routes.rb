@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get :search_tag
       get :manage
+      get :join_server
     end
     resource :like, only: [:create, :destroy]
   end

@@ -8,7 +8,7 @@
 
 if Rails.env == "development"
     500.times do |fake|
-        Gate.create!(:name => Faker::Lorem.word , :intro => Faker::Lorem.sentence(20, true), user_id:1 , server:"666", is_public:"1" )
+      Gate.create!(:name => Faker::Lorem.word , :intro => Faker::Lorem.sentence(20, true),:intro_detail => Faker::Lorem.sentence(150, true), user_id:1 , server:"463954073876692992",:tag => Faker::Food.dish, is_public:"1" )
     end
 end
 

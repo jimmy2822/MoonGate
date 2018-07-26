@@ -1,6 +1,6 @@
 class GatesController < ApplicationController
   before_action :authenticate_user! ,only: [:edit, :destory , :new, :create, :manage]
-  before_action :find_gate_id, except: [:index, :show, :new, :create, :search_tag, :manage ]
+  before_action :find_gate_id, except: [:index, :show, :new, :create, :search_tag, :manage, :join_server ]
 
   # 將 Gate Model 資料傳進實體變數 @gates
   def index
@@ -67,6 +67,15 @@ class GatesController < ApplicationController
     @gates = User.find(current_user[:id]).gates.page(params[:page]).per(8)
   end
 
+  def join_server
+    link = JSON.parse(open("https://discordapp.com/api/guilds/#{params[:gate_server]}/widget.json").read)
+    join_link = link['instant_invite']
+    if join_link
+      redirect_to join_link.to_s 
+    else
+      redirect_to root_path
+    end
+  end
   private
   # 利用 Strong Parameters 設定過濾參數
   def gate_params

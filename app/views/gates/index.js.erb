@@ -1,5 +1,4 @@
 $('#gates-list').append('<%= j render 'gates', gates: @gates %>');
-
 <% if @gates.next_page %>
   $('.pagination').replaceWith('<%= j paginate(@gates) %>');
 <% else %>
