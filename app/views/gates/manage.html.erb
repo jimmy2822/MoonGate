@@ -16,7 +16,7 @@
 
         <div class="gate-box-body">
             <div class="col-lg-12 gate-tool-top">
-                <%= link_to content_tag(:i,"  加入伺服器",class: "fa fa-moon-o").html_safe, gate[:server], target: "_blank", class:"btn-tag " %>
+                <%= link_to (content_tag :i," 加入伺服器",class:"fa fa-moon-o").html_safe, join_server_gates_path(:gate_server=>gate.server ), class:"btn-tag" %>
                 <%= link_to content_tag(:i,"  編輯",class: "fa fa-pencil-square-o").html_safe, edit_gate_path(gate) , class:"btn-warning push-right" %>    
             </div>
             

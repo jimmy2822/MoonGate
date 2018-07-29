@@ -68,14 +68,20 @@ class GatesController < ApplicationController
   end
 
   def join_server
-    link = JSON.parse(open("https://discordapp.com/api/guilds/#{params[:gate_server]}/widget.json").read)
-    join_link = link['instant_invite']
-    if join_link
-      redirect_to join_link.to_s 
+    url = URI("https://discordapp.com/api/guilds/#{params[:gate_server]}/widget.json")
+    res = Net::HTTP.get_response(url)
+    if res.is_a?(Net::HTTPSuccess) 
+      link = JSON.parse(open("https://discordapp.com/api/guilds/#{params[:gate_server]}/widget.json").read)
     else
       redirect_to root_path
+      flash[:error] = '目前找不到該伺服器，請確認伺服器 ID 是否正常？'   
+      return
     end
+
+    join_link = link['instant_invite']
+    redirect_to join_link.to_s 
   end
+  
   private
   # 利用 Strong Parameters 設定過濾參數
   def gate_params
@@ -85,7 +91,6 @@ class GatesController < ApplicationController
   def find_gate_id
     @gate = scoped.find(params[:id])
   end
-
 
   def scoped
     return Gate if current_user.admin? && ['update', 'edit', 'destroy'].include?(params[:action])

@@ -11,6 +11,7 @@
   <body>
     <div class="container">
         <%= render 'gates/header' %>
+        <div class="col-lg-12" style="color:red;"><%= flash[:error] %></div> 
         <%= yield %>
     </div>
     <%= content_for :javascript %>

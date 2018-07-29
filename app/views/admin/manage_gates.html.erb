@@ -2,6 +2,7 @@
   <%= text_field_tag :search, params[:search], placeholder:"搜尋..." %>
 <% end %>
 <hr>
+<span><%= button_to '新增月門', new_admin_gate_path, class:'btn btn-primary', method:'get' %> </span>
 <div><%= form_tag admin_destroy_mutiple_path, method:"delete" do%> <%= submit_tag '刪除選中', class:"btn btn-danger" %></div>
 <table class="table">
     <thead>
@@ -23,7 +24,7 @@
             <td><%= gate.name %></td>
             <td><%= gate.user.email %></td>
             <td><%= gate.created_at %></td>
-            <td><%= link_to "刪除", admin_gate_path(gate) , method:"delete", class:"btn btn-danger"  %> </td>
+            <td><%= link_to "檢視", admin_gate_path(gate) , method:"get", class:"btn btn-primary"%> <%= link_to "編輯", edit_admin_gate_path(gate), class:"btn btn-primary"  %> <%= link_to "刪除", admin_gate_path(gate) , method:"delete", class:"btn btn-danger"  %></td>
         </tr>
         <% end %>
     </tbody>

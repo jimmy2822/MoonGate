@@ -38,4 +38,10 @@ class AdminController < Admin::BaseController
       end
     end
   end
+
+  private
+  def find_gate_id
+    Gate.find(params[:id])
+  end
+
 end
