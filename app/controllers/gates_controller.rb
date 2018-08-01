@@ -24,10 +24,10 @@ class GatesController < ApplicationController
     @gate.user_id = current_user[:id]
 
     if @gate.save
-      redirect_to gates_path, notice: "新增門成功"
+      redirect_to gates_path, :flash =>{success:'新增成功！'} 
     else
       # 儲存失敗時借用 new 方法的頁面，不使用 redirect_to 方法使用者在輸入時的資料不會消失
-      render :new, notice: "新增門失敗"
+      render :new, :flash =>{success:'新增失敗！'} 
     end
   end
 
@@ -39,9 +39,9 @@ class GatesController < ApplicationController
     if @gate.update(gate_params)
       @gate.tag_list.add(params[:tag])
       @gate.save
-      redirect_to manage_gates_path, notice: "編輯成功！"
+      redirect_to manage_gates_path, :flash=>{success:'更新成功！'}
     else	
-      render :edit, notice: "編輯失敗！"
+      render :edit, :flash=>{danger:'更新失敗！'} 
     end
   end
 
@@ -59,7 +59,7 @@ class GatesController < ApplicationController
     else 
       # 有輸入關鍵字對關鍵字查詢
       @gates = Gate.public_server.tagged_with(params[:search_word]).page(params[:page]).per(9)
-      flash.now[:notice] ="目前並無搜尋到相關月門呦～" if @gates.empty?
+      flash.now[:danger] ="目前並無搜尋到相關月門..." if @gates.empty?
     end
   end
 
@@ -74,7 +74,7 @@ class GatesController < ApplicationController
       link = JSON.parse(open("https://discordapp.com/api/guilds/#{params[:gate_server]}/widget.json").read)
     else
       redirect_to root_path
-      flash[:error] = '目前找不到該伺服器，請確認伺服器 ID 是否正常？'   
+      flash[:danger] = '目前找不到伺服器，請確認伺服器 ID 是否正常？'   
       return
     end
 
