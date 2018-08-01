@@ -2,8 +2,10 @@
   <%= text_field_tag :search, params[:search], placeholder:"搜尋..." %>
 <% end %>
 <hr>
-<span><%= button_to '新增月門', new_admin_gate_path, class:'btn btn-primary', method:'get' %> </span>
-<div><%= form_tag admin_destroy_mutiple_path, method:"delete" do%> <%= submit_tag '刪除選中', class:"btn btn-danger" %></div>
+<div><%= form_tag admin_destroy_mutiple_path, method:"delete" do%>
+<%= link_to '新增月門', new_admin_gate_path, class:'btn btn-primary', method:'get' %>
+<%= submit_tag '刪除選中', class:"btn btn-danger" %></div>
+
 <table class="table">
     <thead>
         <tr>

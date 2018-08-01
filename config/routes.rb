@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :gates
+    resources :users
     root action: 'dashboard'
     get :manage_gates
     get :manage_users

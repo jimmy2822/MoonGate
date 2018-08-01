@@ -6,9 +6,9 @@ class AdminController < Admin::BaseController
 
   def manage_gates
     if params[:search] 
-      @gates = Gate.where('name LIKE ?', "%#{params[:search]}%")
+      @gates = Gate.where('name LIKE ?', "%#{params[:search]}%").page(params[:page]).per(50)
     else
-      @gates = Gate.all
+      @gates = Gate.all.page(params[:page]).per(50)
     end
 
     @gates = sort_gates(@gates) if params[:sort].present?

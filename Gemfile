@@ -78,6 +78,8 @@ group :development do
   # Generate testing data
   gem 'faker'
 
+  gem 'pry-rails'
+
 end
 
 group :test do
