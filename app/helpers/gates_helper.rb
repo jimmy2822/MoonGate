@@ -61,6 +61,6 @@ module GatesHelper
   end
 
   def show_add_gate_tip
-    flash.now[:notice]="您目前尚未擁有月門，請點選新增月門按鈕" if current_user.gates.count == 0
+    "您目前尚未擁有月門，請點選新增月門按鈕" if current_user.gates.count == 0
   end
 end

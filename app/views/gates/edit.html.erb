@@ -1,2 +1,5 @@
 <h1>編輯月門</h1>
-<%= render 'form', gate: @gate %>
+<div class="container-fluid col-lg-8 ">
+  <%= render 'form', gate: @gate %>
+<span><%= link_to '刪除月門', gate_path(@gate), method: "delete", class:"btn btn-danger",style:"float:right;" %></span>
+</div>

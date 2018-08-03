@@ -8,6 +8,11 @@
     </ul>
 </div>
 
+<div class="col-lg-4">
+  <h4>月門讓分享 Discord 頻道更簡單！</h4>
+</div>
+
+
 <div class="col-lg-12"><h4><%= flash[:notice]%></h4></div>
 
 <div class="container-fluid col-lg-12" id="gates-list">
@@ -31,7 +36,7 @@
         </div>
 
         <div class="gate-box-tool">
-            <span class="gate-tag col-lg-10"><i class="glyphicon glyphicon-tags">：</i><% search_tag_button(gate.tag_list[0..2]) %></span>
+            <span class="gate-tag col-lg-10"><i class="glyphicon glyphicon-tags">：</i><% search_tag_button(gate.tag_list) %></span>
             <span class="gate-like"><%= like_gate_button(gate) %></span>
         </div>
     </div>

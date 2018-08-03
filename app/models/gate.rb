@@ -6,6 +6,7 @@ class Gate < ApplicationRecord
     validates_presence_of(:name, :server)
     validates_length_of :name, maximum:60
     validates_length_of :intro, maximum:250
+    validates_numericality_of :server, only_integer:true, message:'伺服器 ID 格式錯誤' 
 
     # mount CarrierWave uploader
     mount_uploader :icon, ImageUploader

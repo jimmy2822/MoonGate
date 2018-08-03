@@ -1,4 +1,14 @@
 en:
+  activerecord:
+    errors:
+      models:
+        gate:
+          attributes:
+            server:
+              numericality:
+                only_integer:'伺服器 ID 格式錯誤'
+
+
   views:
     pagination:
       first: "&laquo; 最前頁"

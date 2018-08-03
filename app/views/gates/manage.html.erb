@@ -1,9 +1,8 @@
-<div><%= link_to '新增月門', new_gate_path, class:"btn btn-primary" %></div>
-<div><h4><%= show_add_gate_tip%></h4></div>
-
 <div class="container-fluid col-lg-8 " id="gates-list">
+  <div style="padding-left:10px"><%= link_to '新增月門', new_gate_path, class:"btn btn-primary" %></div>
+  <div><h4><%= show_add_gate_tip%></h4></div>
 
-    <% @gates.each do |gate| %>
+   <% @gates.each do |gate| %>
     <div class="col-lg-8 gate-box ">
         <div class="gate-box-header">
             <div class="col-lg-2 gate-box-icon">
@@ -24,11 +23,17 @@
         </div>
 
         <div class="gate-box-tool">
-            <span class="gate-tag col-lg-10"><i class="glyphicon glyphicon-tags">：</i><% search_tag_button(gate.tag_list[0..2]) %></span>
+            <span class="gate-tag col-lg-10"><i class="glyphicon glyphicon-tags">：</i><% search_tag_button(gate.tag_list) %></span>
             <span class="gate-like"><%= like_gate_button(gate) %></span>
         </div>
     </div>
     <% end %>
+</div>
+
+<div class="col-lg-4 introduction">
+  <h2>關於月門</h2>
+  <hr>
+  <p>月門致力於提供平台分享 Discord 伺服器相關資訊，讓找到志趣相投的夥伴更簡單。</p>
 </div>
 
 <div class="col-lg-12 center"><%= paginate @gates %></div>

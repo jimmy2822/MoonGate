@@ -1,5 +1,19 @@
-<div><%= link_to '返回管理月門', manage_gates_path, class:"btn btn-primary" %></div>
-<h1>新增月門</h1>
-<div><%= render 'gates/new_form', gate: @gate %></div>
+<div class="container col-lg-8">
+  <div><%= link_to '返回管理月門', manage_gates_path, class:"btn btn-primary" %></div>
+  <h1>新增月門</h1>
+  <hr>
+  <%= render 'gates/form', gate: @gate %>
+</div>
+
+<div class="container col-lg-4">
+  <h2>伺服器相關設定參考</h2>
+  <hr>
+  <ul>
+    <li>開啟設定伺服器面板，並將【啟用伺服器小工具】選項打開</li>
+    <li>於【即時邀請頻道】選項中，選取預設加入伺服器的頻道</li>
+    <li>將【伺服器 ID】複製並於新增月門時輸入</li>
+  </ul>
+  <%=link_to (image_tag "https://i.imgur.com/nYi8NP5.jpg", class:'img-responsive') , "https://i.imgur.com/nYi8NP5.jpg", target:'blank' %>
+</div>
 
 
