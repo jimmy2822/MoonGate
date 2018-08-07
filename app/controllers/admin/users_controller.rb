@@ -7,6 +7,7 @@ module Admin
       else
         render admin_manage_users_path
       end
+    end
 
     def destroy
       @user.destroy
