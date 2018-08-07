@@ -24,7 +24,7 @@ class GatesController < ApplicationController
     @gate.user_id = current_user[:id]
 
     if @gate.save
-      redirect_to manage_ gates_path, :flash =>{success:'新增成功！'} 
+      redirect_to manage_gates_path, :flash =>{success:'新增成功！'} 
     else
       # 儲存失敗時借用 new 方法的頁面，不使用 redirect_to 方法使用者在輸入時的資料不會消失
       render :new, :flash =>{success:'新增失敗！'} 

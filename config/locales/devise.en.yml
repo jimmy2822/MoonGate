@@ -14,7 +14,7 @@ en:
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "你需要註冊登或入以管理月門！"
+      unauthenticated: "您需要註冊或登入以管理月門！"
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
